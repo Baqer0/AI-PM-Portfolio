@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330">
+<defs><style>
+.t{font-family:Inter,Arial,sans-serif;fill:#2f235f}.b{fill:#fff;stroke:#cdbbe6;stroke-width:2}
+.a{fill:#efe5f8}.s{fill:#e4f4ef}.arrow{stroke:#6b568f;stroke-width:4;fill:none}
+</style></defs>
+<rect width="1200" height="330" rx="28" fill="#faf8fc"/>
+<text x="600" y="40" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="19" fill="#6b568f">Cold-start personalization</text>
+<g class="t" text-anchor="middle">
+<rect class="b" x="40" y="90" width="245" height="170" rx="20"/>
+<text x="162" y="125" font-size="23" font-weight="700">Onboarding</text>
+<text x="162" y="158" font-size="17">IBD type</text><text x="162" y="184" font-size="17">status & severity</text><text x="162" y="210" font-size="17">daily-life impact</text><text x="162" y="236" font-size="17">support needs</text>
+<rect class="a" x="355" y="90" width="245" height="170" rx="20"/>
+<text x="477" y="125" font-size="23" font-weight="700">Feature weights</text>
+<text x="477" y="158" font-size="17">profile signals</text><text x="477" y="184" font-size="17">needs mapping</text><text x="477" y="210" font-size="17">relevance logic</text><text x="477" y="236" font-size="17">future behavior layer</text>
+<rect class="s" x="670" y="70" width="480" height="210" rx="20"/>
+<text x="910" y="108" font-size="23" font-weight="700">Personalized outputs</text>
+<text x="910" y="148" font-size="17">People • Resources • Healthcare support</text>
+<text x="910" y="180" font-size="17">Communities • Articles • Practical tools</text>
+<text x="910" y="220" font-size="16">Day-one value before interaction history exists</text>
+</g>
+<g class="arrow"><path d="M285 175h65"/><path d="M600 175h65"/></g>
+</svg>
