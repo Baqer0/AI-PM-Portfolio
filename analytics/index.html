@@ -1,1 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Data Visualization | Your Name</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .analytics-hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 6% 55px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 35px;
+    }
+
+    .back-link:hover {
+      color: var(--primary);
+    }
+
+    .analytics-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      max-width: 850px;
+      margin-bottom: 25px;
+    }
+
+    .analytics-hero h1 span {
+      color: var(--primary);
+    }
+
+    .analytics-hero p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .analytics-projects {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 6% 110px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .analytics-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(23, 32, 51, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .analytics-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: #d9d6ff;
+    }
+
+    .analytics-image {
+      height: 280px;
+      background: #eef0f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .analytics-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .analytics-placeholder {
+      font-size: 5rem;
+    }
+
+    .analytics-content {
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .analytics-label {
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .analytics-content h2 {
+      font-size: 1.8rem;
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+
+    .analytics-content p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .analytics-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .analytics-tags span {
+      padding: 6px 10px;
+      border-radius: 100px;
+      background: #f0efff;
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .analytics-button {
+      margin-top: auto;
+    }
+
+    .analytics-note {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 6% 100px;
+    }
+
+    .analytics-note-inner {
+      background: #171b2e;
+      color: white;
+      border-radius: 25px;
+      padding: 35px 40px;
+    }
+
+    .analytics-note-inner h3 {
+      margin-bottom: 8px;
+    }
+
+    .analytics-note-inner p {
+      color: #b9bfd1;
+      margin: 0;
+    }
+
+    @media (max-width: 800px) {
+      .analytics-projects {
+        grid-template-columns: 1fr;
+      }
+
+      .analytics-hero {
+        padding-top: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="../index.html" class="brand">Your Name</a>
+
+  <nav>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#featured">Featured Work</a>
+    <a href="../index.html#analytics">Analytics</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+
+<main>
+
+  <section class="analytics-hero">
+
+    <a href="../index.html" class="back-link">
+      ← Back to portfolio
+    </a>
+
+    <span class="eyebrow">DATA · ANALYTICS · TABLEAU</span>
+
+    <h1>
+      Data that tells a
+      <span>story.</span>
+    </h1>
+
+    <p>
+      Explore interactive analytics projects where I use data visualization
+      to uncover patterns, compare populations, and turn complex datasets
+      into insights that are easier to understand and act on.
+    </p>
+
+  </section>
+
+
+  <section class="analytics-projects">
+
+    <!-- DIABETES -->
+
+    <a href="./diabetes/index.html" class="analytics-card">
+
+      <div class="analytics-image">
+
+        <img
+          src="../../asset/Health_Dashboard.png"
+          alt="Diabetes Health Dashboard"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        >
+
+        <div class="analytics-placeholder" style="display:none;">
+          🩺
+        </div>
+
+      </div>
+
+      <div class="analytics-content">
+
+        <span class="analytics-label">
+          TABLEAU · HEALTHCARE ANALYTICS
+        </span>
+
+        <h2>Diabetes Health Dashboard</h2>
+
+        <p>
+          An interactive analysis of more than 253,000 BRFSS 2015 survey
+          responses, comparing people with diabetes, prediabetes and no
+          diabetes across health, lifestyle and demographic indicators.
+        </p>
+
+        <div class="analytics-tags">
+          <span>253K+ responses</span>
+          <span>Healthcare</span>
+          <span>Demographics</span>
+          <span>Tableau</span>
+        </div>
+
+        <span class="button primary analytics-button">
+          Explore dashboard →
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- YOUTUBE -->
+
+    <a href="./youtube/index.html" class="analytics-card">
+
+      <div class="analytics-image">
+        <div class="analytics-placeholder">
+          ▶️
+        </div>
+      </div>
+
+      <div class="analytics-content">
+
+        <span class="analytics-label">
+          TABLEAU · BUSINESS ANALYTICS
+        </span>
+
+        <h2>YouTube Channel Analysis</h2>
+
+        <p>
+          Five interactive visualizations exploring the world's leading
+          YouTube channels through subscribers, earnings, country trends,
+          upload activity and channel performance.
+        </p>
+
+        <div class="analytics-tags">
+          <span>5 Visualizations</span>
+          <span>Global Trends</span>
+          <span>Performance</span>
+          <span>Tableau</span>
+        </div>
+
+        <span class="button primary analytics-button">
+          Explore analysis →
+        </span>
+
+      </div>
+
+    </a>
+
+  </section>
+
+
+  <section class="analytics-note">
+
+    <div class="analytics-note-inner">
+
+      <h3>Why visualization?</h3>
+
+      <p>
+        Good analytics is not only about finding numbers. It's about making
+        patterns visible, giving people the context to understand them,
+        and helping them ask better questions.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <p>© 2026 Your Name · AI Product Lead</p>
+</footer>
+
+</body>
+</html>
