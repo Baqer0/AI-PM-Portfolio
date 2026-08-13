@@ -1,190 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Data Visualization | Your Name</title>
+  <title>Data & Analytics | AI Product Portfolio</title>
 
   <link rel="stylesheet" href="../style.css">
 
   <style>
-    .analytics-hero {
-      max-width: 1200px;
+
+    :root {
+      --ink: #18202f;
+      --muted: #667085;
+      --soft: #f5f7fa;
+      --line: #e6e9ef;
+      --navy: #111827;
+      --purple: #6d5dfc;
+      --purple-dark: #5045c7;
+      --teal: #159a9c;
+      --orange: #f59e0b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 85% 8%, rgba(109,93,252,0.08), transparent 28%),
+        linear-gradient(#ffffff, #f8f9fb);
+      color: var(--ink);
+    }
+
+    /* ---------------- NAV ---------------- */
+
+    .analytics-nav {
+      max-width: 1250px;
       margin: auto;
-      padding: 90px 6% 55px;
+      padding: 24px 6%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .analytics-brand {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .analytics-nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .analytics-nav-links a {
+      text-decoration: none;
+      color: #5d6675;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .analytics-nav-links a:hover {
+      color: var(--ink);
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .analytics-hero {
+      max-width: 1250px;
+      margin: auto;
+      padding: 55px 6% 45px;
     }
 
     .back-link {
-      display: inline-block;
-      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      color: #667085;
+      text-decoration: none;
+
+      font-size: 0.82rem;
       font-weight: 700;
-      font-size: 0.9rem;
-      margin-bottom: 35px;
+
+      margin-bottom: 45px;
     }
 
     .back-link:hover {
-      color: var(--primary);
+      color: var(--ink);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+
+      color: #6258d9;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: var(--purple);
     }
 
     .analytics-hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      max-width: 850px;
-      margin-bottom: 25px;
+      max-width: 900px;
+
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+
+      margin: 0 0 28px;
+      color: var(--ink);
     }
 
     .analytics-hero h1 span {
-      color: var(--primary);
+      color: var(--purple);
     }
 
-    .analytics-hero p {
-      max-width: 720px;
+    .analytics-intro {
+      max-width: 700px;
+
+      font-size: 1.08rem;
+      line-height: 1.75;
+
       color: var(--muted);
-      font-size: 1.15rem;
+      margin: 0;
     }
+
+    /* ---------------- STATS ---------------- */
+
+    .analytics-stats {
+      max-width: 1250px;
+      margin: 15px auto 50px;
+      padding: 0 6%;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.8);
+
+      border: 1px solid var(--line);
+      border-radius: 16px;
+
+      padding: 22px 24px;
+
+      box-shadow: 0 5px 20px rgba(17,24,39,0.03);
+    }
+
+    .stat-number {
+      display: block;
+
+      font-size: 1.65rem;
+      font-weight: 850;
+
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    /* ---------------- SECTION HEADER ---------------- */
+
+    .projects-header {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 35px 6% 22px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    .projects-header h2 {
+      font-size: 1.5rem;
+      margin: 0 0 5px;
+      letter-spacing: -0.025em;
+    }
+
+    .projects-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .projects-count {
+      font-size: 0.75rem;
+      color: #98a2b3;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+    }
+
+    /* ---------------- PROJECT GRID ---------------- */
 
     .analytics-projects {
-      max-width: 1200px;
+      max-width: 1250px;
       margin: auto;
-      padding: 30px 6% 110px;
+
+      padding: 10px 6% 90px;
+
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      gap: 24px;
     }
 
     .analytics-card {
       display: flex;
       flex-direction: column;
-      background: white;
+
+      background: var(--white);
+
       border: 1px solid var(--line);
-      border-radius: 28px;
+      border-radius: 22px;
+
       overflow: hidden;
-      box-shadow: 0 10px 35px rgba(23, 32, 51, 0.05);
-      transition: 0.25s ease;
+
+      text-decoration: none;
+      color: inherit;
+
+      box-shadow:
+        0 12px 35px rgba(17,24,39,0.05);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
     }
 
     .analytics-card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow);
-      border-color: #d9d6ff;
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 22px 55px rgba(17,24,39,0.10);
+
+      border-color: #d5d1ff;
     }
 
+    /* ---------------- VISUAL AREA ---------------- */
+
     .analytics-image {
-      height: 280px;
-      background: #eef0f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 300px;
+
+      position: relative;
+
+      background:
+        linear-gradient(
+          135deg,
+          #161d2d,
+          #252b42
+        );
+
       overflow: hidden;
     }
 
+    .analytics-image::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.16;
+
+      background-image:
+        linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+
+      background-size: 32px 32px;
+    }
+
     .analytics-image img {
+      position: relative;
+
       width: 100%;
       height: 100%;
+
       object-fit: cover;
+
+      opacity: 0.9;
+
+      transition: 0.3s;
     }
 
-    .analytics-placeholder {
-      font-size: 5rem;
+    .analytics-card:hover .analytics-image img {
+      transform: scale(1.025);
     }
+
+    /* ---------------- PLACEHOLDER VISUAL ---------------- */
+
+    .data-visual {
+      position: absolute;
+
+      inset: 45px;
+
+      display: flex;
+      align-items: end;
+      gap: 12px;
+
+      z-index: 1;
+    }
+
+    .bar {
+      flex: 1;
+
+      border-radius: 7px 7px 2px 2px;
+
+      background: rgba(255,255,255,0.82);
+
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .bar:nth-child(1) { height: 38%; }
+    .bar:nth-child(2) { height: 62%; }
+    .bar:nth-child(3) { height: 48%; }
+    .bar:nth-child(4) { height: 82%; }
+    .bar:nth-child(5) { height: 67%; }
+    .bar:nth-child(6) { height: 94%; }
+
+    .visual-label {
+      position: absolute;
+
+      left: 28px;
+      top: 24px;
+
+      z-index: 2;
+
+      color: white;
+
+      font-size: 0.68rem;
+      font-weight: 800;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ---------------- CONTENT ---------------- */
 
     .analytics-content {
-      padding: 35px;
+      padding: 30px;
+
       display: flex;
       flex-direction: column;
+
       flex: 1;
     }
 
-    .analytics-label {
-      color: var(--primary);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+    .project-type {
+      font-size: 0.68rem;
+      font-weight: 850;
+
+      letter-spacing: 0.13em;
+
+      color: #766cf0;
+
+      margin-bottom: 10px;
     }
 
     .analytics-content h2 {
-      font-size: 1.8rem;
+      font-size: 1.65rem;
       line-height: 1.15;
-      margin: 12px 0;
+
+      letter-spacing: -0.035em;
+
+      margin: 0 0 12px;
     }
 
     .analytics-content p {
       color: var(--muted);
-      margin-bottom: 25px;
+
+      font-size: 0.94rem;
+      line-height: 1.7;
+
+      margin: 0 0 23px;
     }
 
     .analytics-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 28px;
+      gap: 7px;
+
+      margin-bottom: 27px;
     }
 
     .analytics-tags span {
       padding: 6px 10px;
+
+      background: #f4f5f7;
+
+      border: 1px solid #e8eaee;
+
       border-radius: 100px;
-      background: #f0efff;
-      color: var(--primary-dark);
-      font-size: 0.75rem;
+
+      color: #596273;
+
+      font-size: 0.7rem;
       font-weight: 700;
     }
 
     .analytics-button {
       margin-top: auto;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: fit-content;
+
+      padding: 11px 17px;
+
+      border-radius: 10px;
+
+      background: var(--ink);
+      color: white;
+
+      font-size: 0.8rem;
+      font-weight: 750;
+
+      transition: 0.2s;
     }
 
+    .analytics-card:hover .analytics-button {
+      background: var(--purple);
+    }
+
+    /* ---------------- FOOTER CALLOUT ---------------- */
+
     .analytics-note {
-      max-width: 1200px;
+      max-width: 1250px;
+
       margin: 0 auto;
+
       padding: 0 6% 100px;
     }
 
     .analytics-note-inner {
-      background: #171b2e;
+      position: relative;
+
+      overflow: hidden;
+
+      background: #171d2c;
+
+      border-radius: 22px;
+
+      padding: 38px 42px;
+
       color: white;
-      border-radius: 25px;
-      padding: 35px 40px;
+    }
+
+    .analytics-note-inner::after {
+      content: "01 10 11 01 00 11";
+
+      position: absolute;
+
+      right: 35px;
+      top: 28px;
+
+      color: rgba(255,255,255,0.07);
+
+      font-size: 2rem;
+      font-weight: 900;
+
+      letter-spacing: 0.2em;
     }
 
     .analytics-note-inner h3 {
-      margin-bottom: 8px;
+      margin: 0 0 8px;
+
+      font-size: 1.15rem;
     }
 
     .analytics-note-inner p {
-      color: #b9bfd1;
+      max-width: 650px;
+
+      color: #aeb6c8;
+
+      line-height: 1.7;
+
       margin: 0;
     }
 
-    @media (max-width: 800px) {
+    /* ---------------- MOBILE ---------------- */
+
+    @media (max-width: 850px) {
+
+      .analytics-nav-links {
+        display: none;
+      }
+
+      .analytics-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .analytics-projects {
         grid-template-columns: 1fr;
       }
 
       .analytics-hero {
-        padding-top: 60px;
+        padding-top: 35px;
+      }
+
+      .analytics-hero h1 {
+        font-size: 3.5rem;
       }
     }
+
+    @media (max-width: 500px) {
+
+      .analytics-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .analytics-hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .analytics-image {
+        height: 240px;
+      }
+
+      .analytics-content {
+        padding: 24px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-<header class="navbar">
-  <a href="../index.html" class="brand">Your Name</a>
 
-  <nav>
+<header class="analytics-nav">
+
+  <a href="../index.html" class="analytics-brand">
+    Your Name
+  </a>
+
+  <nav class="analytics-nav-links">
     <a href="../index.html#about">About</a>
-    <a href="../index.html#featured">Featured Work</a>
+    <a href="../index.html#featured">MyCCAngel</a>
     <a href="../index.html#analytics">Analytics</a>
     <a href="../index.html#skills">Skills</a>
     <a href="../index.html#contact">Contact</a>
   </nav>
+
 </header>
 
 
 <main>
+
+
+  <!-- HERO -->
 
   <section class="analytics-hero">
 
@@ -192,54 +580,114 @@
       ← Back to portfolio
     </a>
 
-    <span class="eyebrow">DATA · ANALYTICS · TABLEAU</span>
+    <div class="eyebrow">
+      DATA · ANALYTICS · VISUALIZATION
+    </div>
 
     <h1>
-      Data that tells a
-      <span>story.</span>
+      Turning data into
+      <span>insight.</span>
     </h1>
 
-    <p>
-      Explore interactive analytics projects where I use data visualization
-      to uncover patterns, compare populations, and turn complex datasets
-      into insights that are easier to understand and act on.
+    <p class="analytics-intro">
+      A collection of analytics projects exploring healthcare,
+      business performance and large-scale datasets through
+      interactive visualization. The focus is not just on
+      presenting numbers, but on making patterns easier to see,
+      compare and understand.
     </p>
 
   </section>
 
 
+  <!-- STATS -->
+
+  <section class="analytics-stats">
+
+    <div class="stat">
+      <span class="stat-number">253K+</span>
+      <span class="stat-label">Healthcare survey responses</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-number">5</span>
+      <span class="stat-label">YouTube visualizations</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-number">2</span>
+      <span class="stat-label">Interactive projects</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-number">Tableau</span>
+      <span class="stat-label">Primary visualization tool</span>
+    </div>
+
+  </section>
+
+
+  <!-- PROJECT HEADER -->
+
+  <section class="projects-header">
+
+    <div>
+      <h2>Selected analytics work</h2>
+
+      <p>
+        Explore the projects and interact with the underlying analysis.
+      </p>
+    </div>
+
+    <span class="projects-count">
+      02 PROJECTS
+    </span>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
   <section class="analytics-projects">
+
 
     <!-- DIABETES -->
 
-    <a href="./diabetes/index.html" class="analytics-card">
+    <a
+      href="./diabetes/index.html"
+      class="analytics-card"
+    >
 
       <div class="analytics-image">
 
-        <img
-          src="../../asset/Health_Dashboard.png"
-          alt="Diabetes Health Dashboard"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-        >
+        <span class="visual-label">
+          HEALTHCARE DATA
+        </span>
 
-        <div class="analytics-placeholder" style="display:none;">
-          🩺
-        </div>
+        <img
+          src="../../assets/analytics/Health_Dashboard.png"
+          alt="Diabetes Health Dashboard"
+          onerror="this.style.display='none';"
+        >
 
       </div>
 
+
       <div class="analytics-content">
 
-        <span class="analytics-label">
+        <div class="project-type">
           TABLEAU · HEALTHCARE ANALYTICS
-        </span>
+        </div>
 
-        <h2>Diabetes Health Dashboard</h2>
+        <h2>
+          Diabetes Health Dashboard
+        </h2>
 
         <p>
-          An interactive analysis of more than 253,000 BRFSS 2015 survey
-          responses, comparing people with diabetes, prediabetes and no
-          diabetes across health, lifestyle and demographic indicators.
+          Interactive analysis of more than 253,000 BRFSS 2015
+          survey responses, comparing diabetes, prediabetes and
+          no-diabetes populations across health, lifestyle and
+          demographic indicators.
         </p>
 
         <div class="analytics-tags">
@@ -249,7 +697,7 @@
           <span>Tableau</span>
         </div>
 
-        <span class="button primary analytics-button">
+        <span class="analytics-button">
           Explore dashboard →
         </span>
 
@@ -260,36 +708,54 @@
 
     <!-- YOUTUBE -->
 
-    <a href="./youtube/index.html" class="analytics-card">
+    <a
+      href="./youtube/index.html"
+      class="analytics-card"
+    >
 
       <div class="analytics-image">
-        <div class="analytics-placeholder">
-          ▶️
+
+        <span class="visual-label">
+          GLOBAL CREATOR DATA
+        </span>
+
+        <div class="data-visual">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
         </div>
+
       </div>
+
 
       <div class="analytics-content">
 
-        <span class="analytics-label">
+        <div class="project-type">
           TABLEAU · BUSINESS ANALYTICS
-        </span>
+        </div>
 
-        <h2>YouTube Channel Analysis</h2>
+        <h2>
+          YouTube Channel Analysis
+        </h2>
 
         <p>
-          Five interactive visualizations exploring the world's leading
-          YouTube channels through subscribers, earnings, country trends,
-          upload activity and channel performance.
+          Five interactive visualizations exploring global
+          YouTube channel performance through subscribers,
+          earnings, geography, upload activity and channel
+          characteristics.
         </p>
 
         <div class="analytics-tags">
           <span>5 Visualizations</span>
-          <span>Global Trends</span>
+          <span>Global Data</span>
           <span>Performance</span>
           <span>Tableau</span>
         </div>
 
-        <span class="button primary analytics-button">
+        <span class="analytics-button">
           Explore analysis →
         </span>
 
@@ -297,24 +763,30 @@
 
     </a>
 
+
   </section>
 
+
+  <!-- CLOSING -->
 
   <section class="analytics-note">
 
     <div class="analytics-note-inner">
 
-      <h3>Why visualization?</h3>
+      <h3>
+        Analytics is a product skill.
+      </h3>
 
       <p>
-        Good analytics is not only about finding numbers. It's about making
-        patterns visible, giving people the context to understand them,
-        and helping them ask better questions.
+        The strongest dashboards don't simply display information.
+        They help people notice relationships, ask better questions
+        and make decisions with greater context.
       </p>
 
     </div>
 
   </section>
+
 
 </main>
 
@@ -323,5 +795,7 @@
   <p>© 2026 Your Name · AI Product Lead</p>
 </footer>
 
+
 </body>
+
 </html>
