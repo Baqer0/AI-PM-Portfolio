@@ -14,11 +14,8 @@
       --ink: #18202f;
       --muted: #667085;
       --line: #e6e9ef;
-      --soft: #f6f7f9;
       --purple: #6d5dfc;
-      --purple-dark: #5045c7;
       --teal: #159a9c;
-      --orange: #f59e0b;
       --navy: #151b2b;
     }
 
@@ -31,7 +28,6 @@
       max-width: 1250px;
       margin: auto;
       padding: 24px 6%;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -63,25 +59,24 @@
     .back-link {
       display: inline-block;
       margin-bottom: 38px;
-
       color: #667085;
       text-decoration: none;
-
       font-size: .82rem;
       font-weight: 700;
+    }
+
+    .back-link:hover {
+      color: var(--purple);
     }
 
     .eyebrow {
       display: flex;
       align-items: center;
       gap: 9px;
-
       color: var(--purple);
-
       font-size: .7rem;
       font-weight: 850;
       letter-spacing: .14em;
-
       margin-bottom: 18px;
     }
 
@@ -94,11 +89,9 @@
 
     .project-hero h1 {
       max-width: 900px;
-
       font-size: clamp(3rem, 7vw, 5.8rem);
       line-height: .96;
       letter-spacing: -.065em;
-
       margin: 0 0 25px;
     }
 
@@ -108,21 +101,16 @@
 
     .project-intro {
       max-width: 760px;
-
       color: var(--muted);
-
       font-size: 1.08rem;
       line-height: 1.75;
-
       margin: 0;
     }
 
     .project-meta {
       max-width: 1250px;
       margin: 0 auto;
-
       padding: 0 6% 45px;
-
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -130,14 +118,10 @@
 
     .meta-item {
       background: white;
-
       border: 1px solid var(--line);
       border-radius: 100px;
-
       padding: 9px 14px;
-
       color: #596273;
-
       font-size: .74rem;
       font-weight: 700;
     }
@@ -154,82 +138,40 @@
       display: flex;
       justify-content: space-between;
       align-items: end;
-
       margin-bottom: 18px;
     }
 
     .dashboard-header h2 {
       margin: 0 0 5px;
-
       font-size: 1.45rem;
       letter-spacing: -.03em;
     }
 
     .dashboard-header p {
       margin: 0;
-
       color: var(--muted);
       font-size: .86rem;
     }
 
     .dashboard-label {
       color: #98a2b3;
-
       font-size: .7rem;
       font-weight: 800;
-
       letter-spacing: .1em;
     }
 
     .dashboard-frame {
       background: var(--navy);
-
       border-radius: 20px;
-
       padding: 12px;
-
-      box-shadow:
-        0 25px 70px rgba(17,24,39,.13);
+      box-shadow: 0 25px 70px rgba(17,24,39,.13);
     }
 
     .dashboard-image {
       width: 100%;
       display: block;
-
       border-radius: 12px;
-
       background: #eef0f4;
-    }
-
-    .dashboard-placeholder {
-      min-height: 500px;
-
-      display: flex;
-      flex-direction: column;
-
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-
-      color: white;
-    }
-
-    .dashboard-placeholder-icon {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-
-    .dashboard-placeholder h3 {
-      margin: 0 0 8px;
-    }
-
-    .dashboard-placeholder p {
-      max-width: 500px;
-
-      color: #adb5c7;
-
-      line-height: 1.6;
     }
 
     /* CTA */
@@ -238,7 +180,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-
       margin-top: 18px;
     }
 
@@ -246,13 +187,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
       padding: 12px 18px;
-
       border-radius: 10px;
-
       text-decoration: none;
-
       font-size: .8rem;
       font-weight: 750;
     }
@@ -268,9 +205,7 @@
 
     .dashboard-button.secondary {
       background: white;
-
       border: 1px solid var(--line);
-
       color: #596273;
     }
 
@@ -284,49 +219,36 @@
     .insights {
       max-width: 1250px;
       margin: auto;
-
       padding: 0 6% 90px;
-
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 24px;
     }
 
     .insight-card {
       background: white;
-
       border: 1px solid var(--line);
-
       border-radius: 20px;
-
       padding: 30px;
     }
 
     .insight-number {
       display: block;
-
       color: var(--purple);
-
       font-size: .7rem;
       font-weight: 850;
-
       letter-spacing: .12em;
-
       margin-bottom: 15px;
     }
 
     .insight-card h3 {
       margin: 0 0 10px;
-
       font-size: 1.2rem;
     }
 
     .insight-card p {
       margin: 0;
-
       color: var(--muted);
-
       font-size: .9rem;
       line-height: 1.7;
     }
@@ -336,52 +258,39 @@
     .dataset {
       max-width: 1250px;
       margin: auto;
-
       padding: 0 6% 100px;
     }
 
     .dataset-inner {
       background: #171d2c;
-
       color: white;
-
       border-radius: 22px;
-
       padding: 38px 42px;
     }
 
     .dataset-inner h2 {
       margin: 0 0 12px;
-
       font-size: 1.3rem;
     }
 
     .dataset-inner p {
       max-width: 760px;
-
       color: #adb5c7;
-
       line-height: 1.7;
     }
 
     .dataset-tags {
       display: flex;
       flex-wrap: wrap;
-
       gap: 8px;
-
       margin-top: 22px;
     }
 
     .dataset-tags span {
       padding: 7px 11px;
-
       border-radius: 100px;
-
       background: rgba(255,255,255,.08);
-
       color: #d7dce7;
-
       font-size: .72rem;
       font-weight: 700;
     }
@@ -400,23 +309,16 @@
         display: block;
         margin-top: 10px;
       }
-
-      .dashboard-placeholder {
-        min-height: 350px;
-      }
-
     }
   </style>
 </head>
 
-
 <body>
-
 
 <header class="project-nav">
 
   <a href="../../index.html" class="project-brand">
-    Your Name
+    AI Product Portfolio
   </a>
 
   <a href="../index.html">
@@ -425,9 +327,7 @@
 
 </header>
 
-
 <main>
-
 
   <!-- HERO -->
 
@@ -454,7 +354,6 @@
 
   </section>
 
-
   <!-- META -->
 
   <section class="project-meta">
@@ -467,7 +366,6 @@
 
   </section>
 
-
   <!-- DASHBOARD -->
 
   <section class="dashboard-section">
@@ -475,7 +373,7 @@
     <div class="dashboard-header">
 
       <div>
-        <h2>Interactive dashboard</h2>
+        <h2>Dashboard preview</h2>
 
         <p>
           Explore the relationships between diabetes status,
@@ -484,38 +382,29 @@
       </div>
 
       <span class="dashboard-label">
-        LIVE VISUALIZATION
+        TABLEAU PROJECT
       </span>
 
     </div>
 
-
     <div class="dashboard-frame">
-
-      <!--
-        TEMPORARY IMAGE
-
-        Once your Tableau Public dashboard is live,
-        this image area can be replaced with the Tableau embed.
-      -->
 
       <img
         class="dashboard-image"
         src="../../assets/analytics/Health_Dashboard.png"
-        alt="Diabetes Health Dashboard"
+        alt="Diabetes Health Dashboard showing health, lifestyle and demographic analysis"
       >
 
     </div>
 
-
     <div class="dashboard-actions">
 
-      <!-- Replace # with your Tableau Public URL -->
       <a
-        href="#"
+        href="../../assets/analytics/Health_Dashboard.png"
+        target="_blank"
         class="dashboard-button primary"
       >
-        Open interactive Tableau dashboard →
+        View full dashboard image →
       </a>
 
       <a
@@ -528,7 +417,6 @@
     </div>
 
   </section>
-
 
   <!-- INSIGHTS -->
 
@@ -551,7 +439,6 @@
 
     </div>
 
-
     <div class="insight-card">
 
       <span class="insight-number">
@@ -569,7 +456,6 @@
 
     </div>
 
-
     <div class="insight-card">
 
       <span class="insight-number">
@@ -586,7 +472,6 @@
       </p>
 
     </div>
-
 
     <div class="insight-card">
 
@@ -606,7 +491,6 @@
     </div>
 
   </section>
-
 
   <!-- DATASET -->
 
@@ -642,15 +526,11 @@
 
   </section>
 
-
 </main>
 
-
 <footer>
-  <p>© 2026 Your Name · AI Product Lead</p>
+  <p>© 2026 AI Product Portfolio · AI Product Lead</p>
 </footer>
 
-
 </body>
-
 </html>
