@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>YouTube Channel Analysis | Data Analytics</title>
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <style>
+    :root {
+      --ink: #18202f;
+      --muted: #667085;
+      --line: #e6e9ef;
+      --purple: #6d5dfc;
+      --teal: #159a9c;
+      --navy: #151b2b;
+      --red: #ff0000;
+    }
+
+    body {
+      background: #fafbfc;
+      color: var(--ink);
+    }
+
+    .project-nav {
+      max-width: 1250px;
+      margin: auto;
+      padding: 24px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project-brand {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .project-nav a {
+      color: #667085;
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .project-nav a:hover { color: var(--ink); }
+
+    .project-hero {
+      max-width: 1250px;
+      margin: auto;
+      padding: 55px 6% 45px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 38px;
+      color: #667085;
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .back-link:hover { color: var(--purple); }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--purple);
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: var(--purple);
+    }
+
+    .project-hero h1 {
+      max-width: 900px;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: .96;
+      letter-spacing: -.065em;
+      margin: 0 0 25px;
+    }
+
+    .project-hero h1 span { color: var(--purple); }
+
+    .project-intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* META TAGS */
+    .project-meta {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 0 6% 45px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 9px 14px;
+      color: #596273;
+      font-size: .74rem;
+      font-weight: 700;
+    }
+
+    /* OVERVIEW STATS */
+    .stats-row {
+      max-width: 1250px;
+      margin: 0 auto 50px;
+      padding: 0 6%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.65rem;
+      color: var(--purple);
+      margin-bottom: 4px;
+    }
+
+    .stat-card span {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* VISUALIZATIONS */
+    .viz-section {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 6% 30px;
+    }
+
+    .viz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .viz-header h2 {
+      margin: 0 0 5px;
+      font-size: 1.45rem;
+      letter-spacing: -.03em;
+    }
+
+    .viz-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .viz-label {
+      color: #98a2b3;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .viz-frame {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: 0 25px 70px rgba(17,24,39,.13);
+      margin-bottom: 50px;
+    }
+
+    .viz-image {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      background: #eef0f4;
+      min-height: 200px;
+      object-fit: cover;
+    }
+
+    .viz-number {
+      display: inline-block;
+      background: var(--purple);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    /* INSIGHTS */
+    .insights {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 6% 90px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .insight-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .insight-number {
+      display: block;
+      color: var(--purple);
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      margin-bottom: 15px;
+    }
+
+    .insight-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .insight-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    /* DATASET */
+    .dataset {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 6% 100px;
+    }
+
+    .dataset-inner {
+      background: #171d2c;
+      color: white;
+      border-radius: 22px;
+      padding: 38px 42px;
+    }
+
+    .dataset-inner h2 {
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+    }
+
+    .dataset-inner p {
+      max-width: 760px;
+      color: #adb5c7;
+      line-height: 1.7;
+      margin: 0 0 22px;
+    }
+
+    .dataset-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .dataset-tags span {
+      padding: 7px 11px;
+      border-radius: 100px;
+      background: rgba(255,255,255,.08);
+      color: #d7dce7;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    .dataset-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      padding: 11px 17px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      color: white;
+      font-size: .8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .dataset-link:hover {
+      background: rgba(255,255,255,.16);
+    }
+
+    /* TABLEAU NOTE */
+    .tableau-note {
+      max-width: 1250px;
+      margin: 0 auto 60px;
+      padding: 0 6%;
+    }
+
+    .tableau-note-inner {
+      background: #f0efff;
+      border: 1px solid #d5d1ff;
+      border-radius: 16px;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .tableau-note-inner span {
+      font-size: 1.4rem;
+    }
+
+    .tableau-note-inner p {
+      margin: 0;
+      color: #4f46d8;
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 750px) {
+      .insights { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .viz-header { display: block; }
+      .viz-label { display: block; margin-top: 10px; }
+    }
+
+    @media (max-width: 500px) {
+      .stats-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="project-nav">
+  <a href="../../index.html" class="project-brand">AI Product Portfolio</a>
+  <a href="../index.html">← All analytics projects</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="project-hero">
+
+    <a href="../index.html" class="back-link">← Back to Data & Analytics</a>
+
+    <div class="eyebrow">TABLEAU · BUSINESS ANALYTICS</div>
+
+    <h1>
+      YouTube Channel
+      <span>Analysis.</span>
+    </h1>
+
+    <p class="project-intro">
+      Five visualizations exploring the global YouTube creator landscape —
+      from subscriber counts and monthly earnings to geographic distribution,
+      upload activity and the relationships between engagement metrics.
+    </p>
+
+  </section>
+
+  <!-- META -->
+  <section class="project-meta">
+    <span class="meta-item">5 Visualizations</span>
+    <span class="meta-item">Global YouTube dataset</span>
+    <span class="meta-item">Business analytics</span>
+    <span class="meta-item">Tableau</span>
+    <span class="meta-item">Kaggle dataset</span>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-row">
+    <div class="stat-card">
+      <strong>5</strong>
+      <span>Interactive visualizations</span>
+    </div>
+    <div class="stat-card">
+      <strong>1K+</strong>
+      <span>YouTube channels analyzed</span>
+    </div>
+    <div class="stat-card">
+      <strong>Global</strong>
+      <span>Country-level analysis</span>
+    </div>
+    <div class="stat-card">
+      <strong>Tableau</strong>
+      <span>Visualization tool</span>
+    </div>
+  </section>
+
+  <!-- TABLEAU NOTE -->
+  <section class="tableau-note">
+    <div class="tableau-note-inner">
+      <span>📊</span>
+      <p>
+        These visualizations were built in Tableau. Interactive versions will be
+        embedded here via Tableau Public shortly. Static previews are shown below.
+      </p>
+    </div>
+  </section>
+
+  <!-- VIZ 1 -->
+  <section class="viz-section">
+    <div class="viz-header">
+      <div>
+        <span class="viz-number">01</span>
+        <h2>Top 10 Channels by Monthly Earnings</h2>
+        <p>Entertainment channels ranked by estimated monthly revenue.</p>
+      </div>
+      <span class="viz-label">TABLEAU PROJECT</span>
+    </div>
+    <div class="viz-frame">
+      <img
+        class="viz-image"
+        src="../../assets/analytics/youtube/top10_earners.png"
+        alt="Top 10 Earning YouTube Channels per Month in Entertainment"
+        onerror="this.style.background='#252b42'; this.style.minHeight='320px';"
+      >
+    </div>
+  </section>
+
+  <!-- VIZ 2 -->
+  <section class="viz-section">
+    <div class="viz-header">
+      <div>
+        <span class="viz-number">02</span>
+        <h2>Top 10 YouTubers by Subscribers</h2>
+        <p>The most subscribed channels globally and what drives their reach.</p>
+      </div>
+      <span class="viz-label">TABLEAU PROJECT</span>
+    </div>
+    <div class="viz-frame">
+      <img
+        class="viz-image"
+        src="../../assets/analytics/youtube/top10_subscribers.png"
+        alt="Top 10 YouTubers with the Most Subscribers"
+        onerror="this.style.background='#252b42'; this.style.minHeight='320px';"
+      >
+    </div>
+  </section>
+
+  <!-- VIZ 3 -->
+  <section class="viz-section">
+    <div class="viz-header">
+      <div>
+        <span class="viz-number">03</span>
+        <h2>Uploads, Views & Subscriptions</h2>
+        <p>Exploring the relationship between upload frequency, view counts and subscriber growth.</p>
+      </div>
+      <span class="viz-label">TABLEAU PROJECT</span>
+    </div>
+    <div class="viz-frame">
+      <img
+        class="viz-image"
+        src="../../assets/analytics/youtube/relationship.png"
+        alt="Relationship between Top 10 YouTubers and Uploads, Views and Subscribers"
+        onerror="this.style.background='#252b42'; this.style.minHeight='320px';"
+      >
+    </div>
+  </section>
+
+  <!-- VIZ 4 -->
+  <section class="viz-section">
+    <div class="viz-header">
+      <div>
+        <span class="viz-number">04</span>
+        <h2>YouTube Country Analysis</h2>
+        <p>Total subscriber distribution mapped across countries worldwide.</p>
+      </div>
+      <span class="viz-label">TABLEAU PROJECT</span>
+    </div>
+    <div class="viz-frame">
+      <img
+        class="viz-image"
+        src="../../assets/analytics/youtube/country_analysis.png"
+        alt="YouTube Total Subscribers by Country"
+        onerror="this.style.background='#252b42'; this.style.minHeight='320px';"
+      >
+    </div>
+  </section>
+
+  <!-- VIZ 5 -->
+  <section class="viz-section">
+    <div class="viz-header">
+      <div>
+        <span class="viz-number">05</span>
+        <h2>Top 10 Countries with YouTube Channels</h2>
+        <p>Which countries produce the most top-ranked YouTube creators.</p>
+      </div>
+      <span class="viz-label">TABLEAU PROJECT</span>
+    </div>
+    <div class="viz-frame">
+      <img
+        class="viz-image"
+        src="../../assets/analytics/youtube/top10_countries.png"
+        alt="Top 10 Countries with YouTube Channels"
+        onerror="this.style.background='#252b42'; this.style.minHeight='320px';"
+      >
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="insights">
+
+    <div class="insight-card">
+      <span class="insight-number">01 · EARNINGS</span>
+      <h3>Revenue concentration</h3>
+      <p>
+        Monthly earnings vary significantly across top channels —
+        entertainment categories dominate the highest revenue brackets,
+        reflecting advertiser demand and audience size.
+      </p>
+    </div>
+
+    <div class="insight-card">
+      <span class="insight-number">02 · SUBSCRIBERS</span>
+      <h3>Scale of reach</h3>
+      <p>
+        The top channels command subscriber counts that dwarf traditional
+        media audiences, with music and entertainment channels consistently
+        leading globally.
+      </p>
+    </div>
+
+    <div class="insight-card">
+      <span class="insight-number">03 · ENGAGEMENT</span>
+      <h3>Uploads vs views tradeoff</h3>
+      <p>
+        Upload frequency does not linearly predict view counts —
+        some of the highest-viewed channels upload significantly less
+        than their peers, suggesting content quality over volume.
+      </p>
+    </div>
+
+    <div class="insight-card">
+      <span class="insight-number">04 · GEOGRAPHY</span>
+      <h3>Creator concentration</h3>
+      <p>
+        The US, India and Brazil account for a disproportionate share
+        of top-ranked channels, reflecting both market size and
+        platform penetration in those regions.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- DATASET -->
+  <section class="dataset">
+    <div class="dataset-inner">
+
+      <h2>Dataset & methodology</h2>
+
+      <p>
+        The analysis uses the Global YouTube Statistics dataset sourced from Kaggle,
+        containing performance data across subscriber counts, video views, earnings
+        estimates, upload history, geographic information and channel classifications.
+        Data was cleaned and preprocessed before visualization in Tableau.
+      </p>
+
+      <div class="dataset-tags">
+        <span>Subscribers</span>
+        <span>Video Views</span>
+        <span>Monthly Earnings</span>
+        <span>Yearly Earnings</span>
+        <span>Country</span>
+        <span>Channel Type</span>
+        <span>Uploads</span>
+        <span>Subscribers (30 days)</span>
+        <span>Views (30 days)</span>
+        <span>Rank</span>
+      </div>
+
+      <a
+        href="https://www.kaggle.com/datasets/naniruddhan/global-youtube-statistics-data/data"
+        target="_blank"
+        class="dataset-link"
+      >
+        View dataset on Kaggle →
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 AI Product Portfolio · AI Product Lead</p>
+</footer>
+
+</body>
+</html>
