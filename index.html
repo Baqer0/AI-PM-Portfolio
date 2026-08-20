@@ -1,370 +1,1108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Your Name | AI Product Lead & Analytics</title>
-  <meta
-    name="description"
-    content="Portfolio of an AI Product Lead focused on healthcare AI, product strategy, machine learning and data analytics."
-  >
+<title>AI Product Manager | Portfolio</title>
 
-  <link rel="stylesheet" href="style.css">
+<meta name="description"
+content="AI Product Manager portfolio featuring healthcare AI, machine learning, product strategy, analytics and product development.">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+  --navy:#0b1628;
+  --navy2:#142641;
+  --blue:#4f9cff;
+  --blue-soft:#eaf3ff;
+  --ink:#172033;
+  --muted:#667085;
+  --line:#e6ebf2;
+  --bg:#f6f9fc;
+  --white:#fff;
+  --purple:#6855d9;
+  --green:#19966f;
+  --max:1280px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(var(--max),calc(100% - 48px));
+  margin:auto;
+}
+
+
+/* ================= HEADER ================= */
+
+.header{
+  margin-top:24px;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(79,156,255,.18),transparent 30%),
+    linear-gradient(135deg,var(--navy),var(--navy2));
+
+  color:white;
+  border-radius:28px;
+  padding:54px 58px;
+
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:50px;
+  align-items:center;
+
+  box-shadow:0 25px 60px rgba(10,25,50,.18);
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  text-transform:uppercase;
+  letter-spacing:.13em;
+
+  font-size:12px;
+  font-weight:800;
+
+  color:var(--blue);
+
+  margin-bottom:18px;
+}
+
+.eyebrow::before{
+  content:"";
+  width:26px;
+  height:2px;
+  background:var(--blue);
+}
+
+.header h1{
+  font-size:clamp(42px,6vw,72px);
+  line-height:1;
+  letter-spacing:-.055em;
+  margin-bottom:20px;
+}
+
+.header h1 span{
+  color:#79b5ff;
+}
+
+.subtitle{
+  color:#b9c8dc;
+  max-width:650px;
+  font-size:18px;
+  line-height:1.75;
+}
+
+.header-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  padding:12px 17px;
+
+  border-radius:10px;
+
+  font-size:13px;
+  font-weight:700;
+
+  transition:.2s ease;
+}
+
+.button.primary{
+  background:white;
+  color:var(--navy);
+}
+
+.button.primary:hover{
+  background:#dcecff;
+  transform:translateY(-2px);
+}
+
+.button.secondary{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color:white;
+}
+
+.button.secondary:hover{
+  background:rgba(255,255,255,.14);
+  transform:translateY(-2px);
+}
+
+
+/* HEADER VISUAL */
+
+.hero-card{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  padding:22px;
+
+  backdrop-filter:blur(10px);
+}
+
+.hero-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+.status{
+  display:flex;
+  align-items:center;
+  gap:7px;
+
+  font-size:11px;
+  color:#b9c8dc;
+}
+
+.status-dot{
+  width:8px;
+  height:8px;
+  background:#45d69a;
+  border-radius:50%;
+}
+
+.hero-card h3{
+  font-size:20px;
+  margin-bottom:18px;
+}
+
+.hero-metrics{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.metric{
+  padding:16px;
+  background:rgba(255,255,255,.06);
+  border-radius:13px;
+}
+
+.metric strong{
+  display:block;
+  font-size:24px;
+}
+
+.metric span{
+  color:#aabbd0;
+  font-size:11px;
+}
+
+
+/* ================= STATS ================= */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+
+  margin:20px 0 70px;
+}
+
+.stat{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+
+  padding:22px;
+
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+  transition:.2s;
+}
+
+.stat:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(20,40,70,.07);
+}
+
+.stat-icon{
+  width:44px;
+  height:44px;
+
+  border-radius:13px;
+
+  background:var(--blue-soft);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#256bc1;
+}
+
+.stat strong{
+  display:block;
+  font-size:22px;
+}
+
+.stat span{
+  color:var(--muted);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-weight:700;
+}
+
+
+/* ================= SECTION ================= */
+
+.section{
+  padding-bottom:80px;
+}
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+
+  margin-bottom:25px;
+}
+
+.section-header h2{
+  font-size:32px;
+  letter-spacing:-.04em;
+}
+
+.section-header p{
+  color:var(--muted);
+  max-width:600px;
+  font-size:14px;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.project{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+
+  padding:27px;
+
+  transition:.22s ease;
+}
+
+.project:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 40px rgba(20,40,70,.09);
+  border-color:#cbdcf2;
+}
+
+.project-icon{
+  width:48px;
+  height:48px;
+
+  border-radius:14px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:var(--blue-soft);
+  color:#256bc1;
+
+  font-size:20px;
+
+  margin-bottom:20px;
+}
+
+.project h3{
+  font-size:20px;
+  margin-bottom:9px;
+}
+
+.project p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.project-tags span{
+  background:#f1f5f9;
+  color:#526174;
+
+  border-radius:999px;
+
+  padding:5px 9px;
+
+  font-size:10px;
+  font-weight:700;
+}
+
+.project-link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+
+  margin-top:22px;
+
+  color:#2768b7;
+
+  font-size:12px;
+  font-weight:800;
+}
+
+
+/* ================= FEATURE ================= */
+
+.feature{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+
+  padding:35px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+
+  align-items:center;
+}
+
+.feature h2{
+  font-size:34px;
+  letter-spacing:-.04em;
+  margin-bottom:14px;
+}
+
+.feature p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.75;
+}
+
+.feature-list{
+  margin-top:23px;
+  display:grid;
+  gap:12px;
+}
+
+.feature-list div{
+  display:flex;
+  gap:11px;
+  align-items:center;
+
+  font-size:13px;
+  font-weight:700;
+}
+
+.feature-list i{
+  color:var(--green);
+}
+
+.feature-visual{
+  background:#f5f8fc;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+}
+
+.feature-visual img{
+  width:100%;
+  border-radius:12px;
+}
+
+
+/* ================= ANALYTICS ================= */
+
+.analytics{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.analytics-card{
+  background:var(--navy);
+  color:white;
+  border-radius:22px;
+  padding:28px;
+}
+
+.analytics-card.youtube{
+  background:linear-gradient(135deg,#171d2d,#252d42);
+}
+
+.analytics-card .small{
+  color:#8fb9ee;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.analytics-card h3{
+  margin:10px 0 8px;
+  font-size:22px;
+}
+
+.analytics-card p{
+  color:#aebbd0;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.analytics-link{
+  display:inline-flex;
+  gap:7px;
+  align-items:center;
+
+  color:white;
+  font-size:12px;
+  font-weight:800;
+}
+
+
+/* ================= DOCUMENTS ================= */
+
+.documents{
+  background:#eef5ff;
+  border:1px solid #dce9f8;
+
+  border-radius:22px;
+
+  padding:30px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+
+.documents h3{
+  margin-bottom:5px;
+}
+
+.documents p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.documents .button{
+  background:var(--navy);
+  color:white;
+  white-space:nowrap;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 45px;
+
+  color:var(--muted);
+  font-size:12px;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .header{
+    grid-template-columns:1fr;
+    padding:40px 30px;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .projects{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .feature{
+    grid-template-columns:1fr;
+  }
+
+  .analytics{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .container{
+    width:min(var(--max),calc(100% - 30px));
+  }
+
+  .header{
+    margin-top:15px;
+    padding:32px 23px;
+    border-radius:22px;
+  }
+
+  .header-actions{
+    flex-direction:column;
+  }
+
+  .button{
+    justify-content:center;
+  }
+
+  .stats,
+  .projects{
+    grid-template-columns:1fr;
+  }
+
+  .section-header{
+    display:block;
+  }
+
+  .section-header p{
+    margin-top:8px;
+  }
+
+  .feature{
+    padding:24px;
+  }
+
+  .documents{
+    display:block;
+  }
+
+  .documents .button{
+    margin-top:18px;
+  }
+
+  .footer-inner{
+    display:block;
+  }
+
+  .footer-inner a{
+    display:block;
+    margin-top:8px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html" class="brand">Your Name</a>
+<div class="container">
 
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="myccangel/index.html">MyCCAngel</a>
-      <a href="#contact">Contact</a>
+<!-- ================= HERO ================= -->
+
+<header class="header">
+
+  <div>
+
+    <div class="eyebrow">
+      AI PRODUCT MANAGER · PORTFOLIO
     </div>
-  </nav>
+
+    <h1>
+      Building products where
+      <span>AI meets real problems.</span>
+    </h1>
+
+    <p class="subtitle">
+      AI Product Manager focused on healthcare, machine learning,
+      analytics and product strategy — from discovery and requirements
+      through AI/ML implementation and product delivery.
+    </p>
+
+    <div class="header-actions">
+
+      <a class="button primary" href="myccangel/index.html">
+        <i class="fas fa-rocket"></i>
+        MyCCAngel Case Study
+      </a>
+
+      <a class="button secondary" href="machine-learning/index.html">
+        <i class="fas fa-brain"></i>
+        Machine Learning
+      </a>
+
+      <a class="button secondary" href="analytics/index.html">
+        <i class="fas fa-chart-line"></i>
+        Analytics
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-card">
+
+    <div class="hero-card-top">
+
+      <strong>Portfolio overview</strong>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Product · AI · Data
+      </div>
+
+    </div>
+
+    <h3>Selected work</h3>
+
+    <div class="hero-metrics">
+
+      <div class="metric">
+        <strong>AI</strong>
+        <span>Product strategy</span>
+      </div>
+
+      <div class="metric">
+        <strong>ML</strong>
+        <span>Applied systems</span>
+      </div>
+
+      <div class="metric">
+        <strong>Data</strong>
+        <span>Analytics projects</span>
+      </div>
+
+      <div class="metric">
+        <strong>UX</strong>
+        <span>Product design</span>
+      </div>
+
+    </div>
+
+  </div>
+
 </header>
 
 
-<main>
+<!-- ================= STATS ================= -->
 
-  <!-- HERO -->
+<div class="stats">
 
-  <section class="hero">
-    <div class="hero-content">
-
-      <p class="eyebrow">AI PRODUCT · ANALYTICS · MACHINE LEARNING</p>
-
-      <h1>
-        Building products
-        <span>where AI meets real-world problems.</span>
-      </h1>
-
-      <p class="hero-text">
-        AI Product Lead focused on healthcare technology, product strategy,
-        machine learning, data analytics and user-centered product development.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#work" class="button primary">
-          View my work
-        </a>
-
-        <a href="myccangel/index.html" class="button secondary">
-          MyCCAngel case study →
-        </a>
-      </div>
-
+  <div class="stat">
+    <div class="stat-icon">
+      <i class="fas fa-heart-pulse"></i>
     </div>
-  </section>
-
-
-  <!-- WORK -->
-
-  <section class="section" id="work">
-
-    <div class="section-heading">
-      <p class="eyebrow">SELECTED WORK</p>
-
-      <h2>
-        Product, AI & analytics projects.
-      </h2>
-
-      <p>
-        A selection of work spanning AI product development,
-        healthcare, machine learning and data visualization.
-      </p>
+    <div>
+      <strong>AI Healthcare</strong>
+      <span>Product focus</span>
     </div>
-
-
-    <div class="project-grid">
-
-      <!-- MYCCANGEL -->
-
-      <article class="project-card featured">
-
-        <div class="project-image">
-          <img
-            src="assets/myccangel/home.png"
-            alt="MyCCAngel healthcare product"
-          >
-        </div>
-
-        <div class="project-content">
-
-          <span class="project-type">
-            AI PRODUCT · HEALTHCARE
-          </span>
-
-          <h3>
-            MyCCAngel
-          </h3>
-
-          <p>
-            AI-powered healthcare community designed around verification,
-            personalization, patient support and everyday-life assistance
-            for people living with IBD.
-          </p>
-
-          <div class="tags">
-            <span>AI Product</span>
-            <span>Healthcare</span>
-            <span>UX</span>
-            <span>Machine Learning</span>
-          </div>
-
-          <a
-            href="myccangel/index.html"
-            class="project-link"
-          >
-            View case study →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- ANALYTICS -->
-
-      <article class="project-card">
-
-        <div class="project-image analytics-image">
-          <img
-            src="assets/analytics/Health_Dashboard.png"
-            alt="Diabetes health analytics dashboard"
-          >
-        </div>
-
-        <div class="project-content">
-
-          <span class="project-type">
-            DATA & ANALYTICS
-          </span>
-
-          <h3>
-            Healthcare Analytics
-          </h3>
-
-          <p>
-            Exploratory analysis of diabetes health indicators,
-            lifestyle factors and demographic patterns using
-            interactive dashboard design.
-          </p>
-
-          <div class="tags">
-            <span>Tableau</span>
-            <span>Healthcare</span>
-            <span>Data Visualization</span>
-          </div>
-
-          <a
-            href="analytics/diabetes/index.html"
-            class="project-link"
-          >
-            View analytics project →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- YOUTUBE -->
-
-      <article class="project-card">
-
-        <div class="project-image">
-          <img
-            src="assets/analytics/youtube/Top 10 YouTubers with the Most Subscribers.png"
-            alt="YouTube analytics visualization"
-          >
-        </div>
-
-        <div class="project-content">
-
-          <span class="project-type">
-            DATA ANALYTICS
-          </span>
-
-          <h3>
-            YouTube Analytics
-          </h3>
-
-          <p>
-            Analysis of YouTube creators, subscribers, earnings and
-            geographic patterns through data visualization.
-          </p>
-
-          <div class="tags">
-            <span>Analytics</span>
-            <span>Visualization</span>
-            <span>Data</span>
-          </div>
-
-          <a
-            href="analytics/youtube/index.html"
-            class="project-link"
-          >
-            View project →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- MACHINE LEARNING -->
-
-      <article class="project-card">
-
-        <div class="project-image ml-placeholder">
-
-          <div>
-            <span>ML</span>
-            <strong>Machine Learning</strong>
-          </div>
-
-        </div>
-
-        <div class="project-content">
-
-          <span class="project-type">
-            MACHINE LEARNING
-          </span>
-
-          <h3>
-            Machine Learning Work
-          </h3>
-
-          <p>
-            Selected machine learning work covering model development,
-            experimentation, data preparation and applied AI.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>Machine Learning</span>
-            <span>Modeling</span>
-          </div>
-
-          <a
-            href="machine-learning/index.html"
-            class="project-link"
-          >
-            View ML work →
-          </a>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-
-  <section class="section about-section" id="about">
-
-    <div class="about-grid">
-
-      <div>
-        <p class="eyebrow">ABOUT</p>
-
-        <h2>
-          Product thinking with technical depth.
-        </h2>
-      </div>
-
-      <div>
-
-        <p>
-          My work sits at the intersection of product strategy,
-          artificial intelligence, healthcare and data.
-        </p>
-
-        <p>
-          I focus on turning ambiguous problems into practical products:
-          defining the opportunity, understanding users, shaping the
-          product strategy and working across design, data and engineering
-          to move from concept toward implementation.
-        </p>
-
-        <div class="skill-list">
-          <span>AI Product Strategy</span>
-          <span>Healthcare Technology</span>
-          <span>Machine Learning</span>
-          <span>Data Analytics</span>
-          <span>UX / Product Design</span>
-          <span>Product Discovery</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section class="contact-section" id="contact">
-
-    <div class="contact-inner">
-
-      <p class="eyebrow">CONTACT</p>
-
-      <h2>
-        Let's build something useful.
-      </h2>
-
-      <p>
-        Interested in AI products, healthcare technology,
-        analytics or product strategy?
-      </p>
-
-      <div class="contact-actions">
-
-        <!-- Replace with your actual email -->
-        <a
-          href="mailto:your.email@example.com"
-          class="button primary"
-        >
-          Get in touch
-        </a>
-
-        <a
-          href="myccangel/index.html"
-          class="button secondary"
-        >
-          Explore MyCCAngel →
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer class="site-footer">
-
-  <div>
-    © 2026 Your Name
   </div>
 
-  <div>
-    AI Product Lead · Analytics · Machine Learning
+  <div class="stat">
+    <div class="stat-icon">
+      <i class="fas fa-chart-line"></i>
+    </div>
+    <div>
+      <strong>Analytics</strong>
+      <span>Data projects</span>
+    </div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-icon">
+      <i class="fas fa-microchip"></i>
+    </div>
+    <div>
+      <strong>Machine Learning</strong>
+      <span>Applied AI</span>
+    </div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-icon">
+      <i class="fas fa-layer-group"></i>
+    </div>
+    <div>
+      <strong>End-to-End</strong>
+      <span>Product ownership</span>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ================= SELECTED WORK ================= -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div>
+      <div class="eyebrow">SELECTED WORK</div>
+
+      <h2>Projects that show how I think.</h2>
+    </div>
+
+    <p>
+      A combination of product strategy, AI/ML systems,
+      healthcare product development and data analytics.
+    </p>
+
+  </div>
+
+
+  <div class="projects">
+
+    <!-- MYCCANGEL -->
+
+    <article class="project">
+
+      <div class="project-icon">
+        <i class="fas fa-heart-pulse"></i>
+      </div>
+
+      <h3>MyCCAngel</h3>
+
+      <p>
+        AI-powered healthcare community designed around
+        verification, personalization, recommendations and
+        everyday patient support.
+      </p>
+
+      <div class="project-tags">
+        <span>AI Product</span>
+        <span>Healthcare</span>
+        <span>UX</span>
+        <span>ML</span>
+      </div>
+
+      <a class="project-link" href="myccangel/index.html">
+        View case study
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </article>
+
+
+    <!-- MACHINE LEARNING -->
+
+    <article class="project">
+
+      <div class="project-icon">
+        <i class="fas fa-brain"></i>
+      </div>
+
+      <h3>Machine Learning</h3>
+
+      <p>
+        Applied machine learning work covering model development,
+        evaluation, preprocessing and practical AI problem solving.
+      </p>
+
+      <div class="project-tags">
+        <span>Python</span>
+        <span>ML</span>
+        <span>Data</span>
+        <span>Modeling</span>
+      </div>
+
+      <a class="project-link" href="machine-learning/index.html">
+        View ML work
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </article>
+
+
+    <!-- ANALYTICS -->
+
+    <article class="project">
+
+      <div class="project-icon">
+        <i class="fas fa-chart-column"></i>
+      </div>
+
+      <h3>Data & Analytics</h3>
+
+      <p>
+        Interactive analytics projects exploring healthcare,
+        YouTube creators, demographics, trends and business insights.
+      </p>
+
+      <div class="project-tags">
+        <span>Tableau</span>
+        <span>Analytics</span>
+        <span>SQL</span>
+        <span>Visualization</span>
+      </div>
+
+      <a class="project-link" href="analytics/index.html">
+        View analytics
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= MYCCANGEL FEATURE ================= -->
+
+<section class="section">
+
+  <div class="feature">
+
+    <div>
+
+      <div class="eyebrow">
+        FEATURED CASE STUDY
+      </div>
+
+      <h2>MyCCAngel</h2>
+
+      <p>
+        A healthcare AI product built around a simple principle:
+        technology should solve meaningful patient problems while
+        maintaining trust and safety.
+      </p>
+
+      <div class="feature-list">
+
+        <div>
+          <i class="fas fa-check-circle"></i>
+          Product vision & strategy
+        </div>
+
+        <div>
+          <i class="fas fa-check-circle"></i>
+          AI / ML product architecture
+        </div>
+
+        <div>
+          <i class="fas fa-check-circle"></i>
+          Recommendation engine
+        </div>
+
+        <div>
+          <i class="fas fa-check-circle"></i>
+          Medical report verification
+        </div>
+
+        <div>
+          <i class="fas fa-check-circle"></i>
+          UX and product requirements
+        </div>
+
+      </div>
+
+      <a
+        class="project-link"
+        href="myccangel/index.html"
+      >
+        Explore the full case study
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+    <div class="feature-visual">
+
+      <img
+        src="assets/myccangel/home.png"
+        alt="MyCCAngel healthcare product interface"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ANALYTICS ================= -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div>
+
+      <div class="eyebrow">
+        DATA & ANALYTICS
+      </div>
+
+      <h2>Turning data into decisions.</h2>
+
+    </div>
+
+    <p>
+      Analytics projects demonstrate practical data exploration,
+      visualization and communication.
+    </p>
+
+  </div>
+
+
+  <div class="analytics">
+
+    <article class="analytics-card">
+
+      <span class="small">
+        Healthcare analytics
+      </span>
+
+      <h3>Diabetes Health Dashboard</h3>
+
+      <p>
+        Explore diabetes status, health indicators,
+        lifestyle factors and demographic patterns.
+      </p>
+
+      <a
+        class="analytics-link"
+        href="analytics/diabetes/index.html"
+      >
+        View dashboard
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </article>
+
+
+    <article class="analytics-card youtube">
+
+      <span class="small">
+        YouTube analytics
+      </span>
+
+      <h3>YouTube Creator Analysis</h3>
+
+      <p>
+        Analyze subscribers, creator performance,
+        earnings and geographic patterns.
+      </p>
+
+      <a
+        class="analytics-link"
+        href="analytics/youtube/index.html"
+      >
+        View analysis
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DOCUMENTS ================= -->
+
+<section class="section">
+
+  <div class="documents">
+
+    <div>
+
+      <div class="eyebrow">
+        MYCCANGEL DOCUMENTATION
+      </div>
+
+      <h3>Want to see the work behind the product?</h3>
+
+      <p>
+        Explore the PRD, roadmap, full case study and supporting
+        product documentation.
+      </p>
+
+    </div>
+
+    <a
+      class="button"
+      href="myccangel/index.html"
+    >
+      View documentation
+      <i class="fas fa-arrow-right"></i>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <span>
+      AI Product Manager · Healthcare · AI · Data
+    </span>
+
+    <span>
+      © 2026
+    </span>
+
   </div>
 
 </footer>
+
+</div>
 
 </body>
 </html>
