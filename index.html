@@ -1,1106 +1,1198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AI Product Manager | Portfolio</title>
-
-<meta name="description"
-content="AI Product Manager portfolio featuring healthcare AI, machine learning, product strategy, analytics and product development.">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<style>
-
-:root{
-  --navy:#0b1628;
-  --navy2:#142641;
-  --blue:#4f9cff;
-  --blue-soft:#eaf3ff;
-  --ink:#172033;
-  --muted:#667085;
-  --line:#e6ebf2;
-  --bg:#f6f9fc;
-  --white:#fff;
-  --purple:#6855d9;
-  --green:#19966f;
-  --max:1280px;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.6;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-.container{
-  width:min(var(--max),calc(100% - 48px));
-  margin:auto;
-}
-
-
-/* ================= HEADER ================= */
-
-.header{
-  margin-top:24px;
-  background:
-    radial-gradient(circle at 85% 15%,rgba(79,156,255,.18),transparent 30%),
-    linear-gradient(135deg,var(--navy),var(--navy2));
-
-  color:white;
-  border-radius:28px;
-  padding:54px 58px;
-
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-  gap:50px;
-  align-items:center;
-
-  box-shadow:0 25px 60px rgba(10,25,50,.18);
-}
-
-.eyebrow{
-  display:flex;
-  align-items:center;
-  gap:10px;
-
-  text-transform:uppercase;
-  letter-spacing:.13em;
-
-  font-size:12px;
-  font-weight:800;
-
-  color:var(--blue);
-
-  margin-bottom:18px;
-}
-
-.eyebrow::before{
-  content:"";
-  width:26px;
-  height:2px;
-  background:var(--blue);
-}
-
-.header h1{
-  font-size:clamp(42px,6vw,72px);
-  line-height:1;
-  letter-spacing:-.055em;
-  margin-bottom:20px;
-}
-
-.header h1 span{
-  color:#79b5ff;
-}
-
-.subtitle{
-  color:#b9c8dc;
-  max-width:650px;
-  font-size:18px;
-  line-height:1.75;
-}
-
-.header-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:28px;
-}
-
-.button{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-
-  padding:12px 17px;
-
-  border-radius:10px;
-
-  font-size:13px;
-  font-weight:700;
-
-  transition:.2s ease;
-}
-
-.button.primary{
-  background:white;
-  color:var(--navy);
-}
-
-.button.primary:hover{
-  background:#dcecff;
-  transform:translateY(-2px);
-}
-
-.button.secondary{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.14);
-  color:white;
-}
-
-.button.secondary:hover{
-  background:rgba(255,255,255,.14);
-  transform:translateY(-2px);
-}
-
-
-/* HEADER VISUAL */
-
-.hero-card{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:22px;
-
-  backdrop-filter:blur(10px);
-}
-
-.hero-card-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:24px;
-}
-
-.status{
-  display:flex;
-  align-items:center;
-  gap:7px;
-
-  font-size:11px;
-  color:#b9c8dc;
-}
-
-.status-dot{
-  width:8px;
-  height:8px;
-  background:#45d69a;
-  border-radius:50%;
-}
-
-.hero-card h3{
-  font-size:20px;
-  margin-bottom:18px;
-}
-
-.hero-metrics{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.metric{
-  padding:16px;
-  background:rgba(255,255,255,.06);
-  border-radius:13px;
-}
-
-.metric strong{
-  display:block;
-  font-size:24px;
-}
-
-.metric span{
-  color:#aabbd0;
-  font-size:11px;
-}
-
-
-/* ================= STATS ================= */
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-
-  margin:20px 0 70px;
-}
-
-.stat{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:18px;
-
-  padding:22px;
-
-  display:flex;
-  align-items:center;
-  gap:15px;
-
-  transition:.2s;
-}
-
-.stat:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(20,40,70,.07);
-}
-
-.stat-icon{
-  width:44px;
-  height:44px;
-
-  border-radius:13px;
-
-  background:var(--blue-soft);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:#256bc1;
-}
-
-.stat strong{
-  display:block;
-  font-size:22px;
-}
-
-.stat span{
-  color:var(--muted);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  font-weight:700;
-}
-
-
-/* ================= SECTION ================= */
-
-.section{
-  padding-bottom:80px;
-}
-
-.section-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-
-  margin-bottom:25px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Product Manager Portfolio | MyCCAngel</title>
+
+  <meta
+    name="description"
+    content="AI Product Manager portfolio covering AI product strategy, healthcare, machine learning, analytics and product development."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #091526;
+      --navy-2: #132640;
+      --blue: #3b82f6;
+      --blue-soft: #eaf3ff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #e5ebf3;
+      --bg: #f6f9fc;
+      --white: #ffffff;
+      --green: #18864b;
+      --purple: #6548a8;
+      --orange: #d97706;
+      --max: 1400px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .portfolio {
+      max-width: var(--max);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    .header {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(59,130,246,.18), transparent 30%),
+        linear-gradient(145deg, var(--navy), var(--navy-2));
+
+      color: white;
+      border-radius: 28px;
+
+      padding: 42px 48px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      margin-bottom: 22px;
+
+      box-shadow: 0 24px 60px rgba(5,20,40,.22);
+    }
+
+    .header-left h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .header-left h1 span {
+      color: #79b7ff;
+      font-weight: 500;
+      font-size: .48em;
+      letter-spacing: -.01em;
+    }
+
+    .header-icon {
+      width: 48px;
+      height: 48px;
 
-.section-header h2{
-  font-size:32px;
-  letter-spacing:-.04em;
-}
-
-.section-header p{
-  color:var(--muted);
-  max-width:600px;
-  font-size:14px;
-}
+      border-radius: 15px;
 
+      display: grid;
+      place-items: center;
 
-/* ================= PROJECTS ================= */
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
 
-.projects{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
+      color: #70b2ff;
+      font-size: 1.4rem;
+    }
 
-.project{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:22px;
-
-  padding:27px;
+    .tagline {
+      margin-top: 12px;
 
-  transition:.22s ease;
-}
-
-.project:hover{
-  transform:translateY(-5px);
-  box-shadow:0 20px 40px rgba(20,40,70,.09);
-  border-color:#cbdcf2;
-}
-
-.project-icon{
-  width:48px;
-  height:48px;
-
-  border-radius:14px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:var(--blue-soft);
-  color:#256bc1;
-
-  font-size:20px;
-
-  margin-bottom:20px;
-}
-
-.project h3{
-  font-size:20px;
-  margin-bottom:9px;
-}
-
-.project p{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.7;
-  margin-bottom:20px;
-}
-
-.project-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-}
-
-.project-tags span{
-  background:#f1f5f9;
-  color:#526174;
-
-  border-radius:999px;
-
-  padding:5px 9px;
-
-  font-size:10px;
-  font-weight:700;
-}
-
-.project-link{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-
-  margin-top:22px;
-
-  color:#2768b7;
-
-  font-size:12px;
-  font-weight:800;
-}
-
-
-/* ================= FEATURE ================= */
-
-.feature{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:24px;
-
-  padding:35px;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-
-  align-items:center;
-}
-
-.feature h2{
-  font-size:34px;
-  letter-spacing:-.04em;
-  margin-bottom:14px;
-}
-
-.feature p{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.75;
-}
-
-.feature-list{
-  margin-top:23px;
-  display:grid;
-  gap:12px;
-}
-
-.feature-list div{
-  display:flex;
-  gap:11px;
-  align-items:center;
-
-  font-size:13px;
-  font-weight:700;
-}
-
-.feature-list i{
-  color:var(--green);
-}
-
-.feature-visual{
-  background:#f5f8fc;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:18px;
-}
-
-.feature-visual img{
-  width:100%;
-  border-radius:12px;
-}
-
-
-/* ================= ANALYTICS ================= */
+      color: #b8c9df;
 
-.analytics{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.analytics-card{
-  background:var(--navy);
-  color:white;
-  border-radius:22px;
-  padding:28px;
-}
-
-.analytics-card.youtube{
-  background:linear-gradient(135deg,#171d2d,#252d42);
-}
-
-.analytics-card .small{
-  color:#8fb9ee;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
+      font-size: .95rem;
 
-.analytics-card h3{
-  margin:10px 0 8px;
-  font-size:22px;
-}
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-.analytics-card p{
-  color:#aebbd0;
-  font-size:13px;
-  margin-bottom:20px;
-}
+      flex-wrap: wrap;
+    }
 
-.analytics-link{
-  display:inline-flex;
-  gap:7px;
-  align-items:center;
-
-  color:white;
-  font-size:12px;
-  font-weight:800;
-}
-
-
-/* ================= DOCUMENTS ================= */
-
-.documents{
-  background:#eef5ff;
-  border:1px solid #dce9f8;
-
-  border-radius:22px;
-
-  padding:30px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:25px;
-}
-
-.documents h3{
-  margin-bottom:5px;
-}
-
-.documents p{
-  color:var(--muted);
-  font-size:13px;
-}
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #60a5fa;
+    }
 
-.documents .button{
-  background:var(--navy);
-  color:white;
-  white-space:nowrap;
-}
-
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-/* ================= FOOTER ================= */
+    .header-actions a {
+      padding: 11px 17px;
 
-footer{
-  border-top:1px solid var(--line);
-  padding:30px 0 45px;
+      border-radius: 999px;
 
-  color:var(--muted);
-  font-size:12px;
-}
+      background: rgba(255,255,255,.07);
 
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-}
+      border: 1px solid rgba(255,255,255,.1);
 
+      font-size: .84rem;
+      font-weight: 650;
 
-/* ================= MOBILE ================= */
+      transition: .2s ease;
+    }
 
-@media(max-width:900px){
+    .header-actions a:hover {
+      transform: translateY(-2px);
+      background: rgba(59,130,246,.2);
+      border-color: #60a5fa;
+    }
 
-  .header{
-    grid-template-columns:1fr;
-    padding:40px 30px;
-  }
+    /* STATS */
 
-  .stats{
-    grid-template-columns:1fr 1fr;
-  }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
 
-  .projects{
-    grid-template-columns:1fr 1fr;
-  }
+      margin-bottom: 22px;
+    }
 
-  .feature{
-    grid-template-columns:1fr;
-  }
+    .stat-card {
+      background: white;
 
-  .analytics{
-    grid-template-columns:1fr;
-  }
+      border: 1px solid var(--line);
+      border-radius: 20px;
 
-}
+      padding: 20px;
 
-@media(max-width:600px){
+      display: flex;
+      align-items: center;
+      gap: 14px;
 
-  .container{
-    width:min(var(--max),calc(100% - 30px));
-  }
+      box-shadow: 0 5px 18px rgba(20,40,70,.035);
 
-  .header{
-    margin-top:15px;
-    padding:32px 23px;
-    border-radius:22px;
-  }
+      transition: .2s ease;
+    }
 
-  .header-actions{
-    flex-direction:column;
-  }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: #bfd5ef;
+    }
 
-  .button{
-    justify-content:center;
-  }
+    .stat-icon {
+      width: 44px;
+      height: 44px;
 
-  .stats,
-  .projects{
-    grid-template-columns:1fr;
-  }
+      border-radius: 13px;
 
-  .section-header{
-    display:block;
-  }
+      display: grid;
+      place-items: center;
 
-  .section-header p{
-    margin-top:8px;
-  }
+      background: var(--blue-soft);
 
-  .feature{
-    padding:24px;
-  }
+      color: #245d9f;
 
-  .documents{
-    display:block;
-  }
+      font-size: 1.15rem;
+    }
 
-  .documents .button{
-    margin-top:18px;
-  }
+    .stat-label {
+      display: block;
 
-  .footer-inner{
-    display:block;
-  }
+      color: var(--muted);
 
-  .footer-inner a{
-    display:block;
-    margin-top:8px;
-  }
+      text-transform: uppercase;
 
-}
+      letter-spacing: .08em;
 
-</style>
+      font-size: .67rem;
+      font-weight: 750;
+    }
+
+    .stat-value {
+      display: block;
+
+      margin-top: 2px;
+
+      color: #10233d;
+
+      font-size: 1.35rem;
+      font-weight: 750;
+    }
+
+    /* MAIN */
+
+    .main-layout {
+      display: grid;
+
+      grid-template-columns: 320px 1fr;
+
+      gap: 22px;
+
+      align-items: start;
+    }
+
+    /* TREE */
+
+    .tree-panel,
+    .preview {
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 25px;
+
+      box-shadow: 0 8px 30px rgba(20,40,70,.045);
+    }
+
+    .tree-panel {
+      padding: 23px 12px;
+
+      max-height: 720px;
+
+      overflow: auto;
+    }
+
+    .tree-title {
+      padding: 0 10px 16px;
+
+      border-bottom: 1px solid #edf2f7;
+
+      margin-bottom: 13px;
+
+      color: #64748b;
+
+      font-size: .75rem;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: .08em;
+    }
+
+    .tree {
+      font-size: .84rem;
+    }
+
+    .tree-row {
+      display: flex;
+      align-items: center;
+
+      min-height: 32px;
+
+      padding: 5px 8px;
+
+      border-radius: 8px;
+
+      margin-bottom: 2px;
+
+      color: #263548;
+
+      transition: .15s;
+    }
+
+    .tree-row:hover {
+      background: #f3f7fc;
+    }
+
+    .tree-row.folder {
+      font-weight: 700;
+    }
+
+    .tree-row.file {
+      color: #526173;
+    }
+
+    .tree-row.active {
+      background: #eaf3ff;
+
+      color: #123e70;
+
+      font-weight: 750;
+    }
+
+    .tree-indent {
+      padding-left: 22px;
+    }
+
+    .tree-indent-2 {
+      padding-left: 44px;
+    }
+
+    .tree-icon {
+      width: 24px;
+
+      color: #8a9aae;
+    }
+
+    .folder .tree-icon {
+      color: #e5a62b;
+    }
+
+    .active .tree-icon {
+      color: var(--blue);
+    }
+
+    .badge {
+      margin-left: auto;
+
+      padding: 2px 7px;
+
+      border-radius: 999px;
+
+      background: #dbeafe;
+
+      color: #245d9f;
+
+      font-size: .58rem;
+
+      font-weight: 800;
+    }
+
+    /* PREVIEW */
+
+    .preview {
+      padding: 30px;
+    }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 15px;
+
+      padding-bottom: 20px;
+
+      border-bottom: 1px solid #edf2f7;
+
+      margin-bottom: 22px;
+    }
+
+    .preview-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-size: 1.4rem;
+      letter-spacing: -.025em;
+    }
+
+    .preview-title-icon {
+      color: var(--blue);
+    }
+
+    .file-path {
+      padding: 6px 11px;
+
+      border-radius: 999px;
+
+      background: #f2f6fb;
+
+      color: #526579;
+
+      font-size: .72rem;
+
+      font-weight: 650;
+    }
+
+    .intro {
+      max-width: 760px;
+
+      color: #4b5b6e;
+
+      font-size: .96rem;
+    }
+
+    .intro strong {
+      color: var(--ink);
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 15px;
+
+      margin-top: 25px;
+    }
+
+    .project-card {
+      background: #fbfdff;
+
+      border: 1px solid #e2eaf3;
+
+      border-radius: 19px;
+
+      padding: 22px;
+
+      transition: .2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+
+      border-color: #b8d0ed;
+
+      box-shadow: 0 12px 28px rgba(40,100,170,.08);
+    }
+
+    .project-icon {
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 13px;
+
+      background: var(--blue-soft);
+
+      color: #245d9f;
+
+      margin-bottom: 15px;
+
+      font-size: 1.1rem;
+    }
+
+    .project-card h3 {
+      font-size: 1rem;
+
+      margin-bottom: 6px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+
+      font-size: .82rem;
+
+      min-height: 45px;
+    }
+
+    .project-link {
+      display: inline-flex;
+
+      margin-top: 13px;
+
+      color: #2463a5;
+
+      font-size: .78rem;
+
+      font-weight: 750;
+    }
+
+    .project-tag {
+      display: inline-block;
+
+      margin-top: 12px;
+
+      padding: 4px 9px;
+
+      border-radius: 999px;
+
+      background: #eaf3ff;
+
+      color: #245d9f;
+
+      font-size: .62rem;
+
+      font-weight: 750;
+    }
+
+    /* DOCUMENTS */
+
+    .documents {
+      margin-top: 30px;
+
+      padding-top: 23px;
+
+      border-top: 1px solid #edf2f7;
+    }
+
+    .documents h3 {
+      font-size: .9rem;
+
+      margin-bottom: 13px;
+    }
+
+    .doc-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+    .doc {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 9px 13px;
+
+      background: #f8fbff;
+
+      border: 1px solid #dfe9f3;
+
+      border-radius: 999px;
+
+      color: #294967;
+
+      font-size: .74rem;
+
+      font-weight: 650;
+
+      transition: .15s;
+    }
+
+    .doc:hover {
+      background: #eef5fd;
+
+      border-color: #b8d0ed;
+    }
+
+    .doc-icon {
+      color: #c44536;
+    }
+
+    /* CTA */
+
+    .cta {
+      margin-top: 25px;
+
+      padding: 18px 20px;
+
+      border-radius: 16px;
+
+      background: #f1f7ff;
+
+      border: 1px dashed #9dc0e7;
+
+      color: #294967;
+
+      font-size: .82rem;
+    }
+
+    .cta strong {
+      color: #143c65;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 28px 0 5px;
+
+      text-align: center;
+
+      color: #718096;
+
+      font-size: .74rem;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 1050px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .tree-panel {
+        max-height: 380px;
+      }
+    }
+
+    @media(max-width: 800px) {
+      body {
+        padding: 14px;
+      }
+
+      .header {
+        padding: 30px 25px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+      }
+
+      .header-actions {
+        width: 100%;
+      }
+
+      .header-actions a {
+        flex: 1;
+        text-align: center;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .stats,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview {
+        padding: 20px;
+      }
+
+      .preview-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .header-left h1 {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="portfolio">
 
-<!-- ================= HERO ================= -->
+  <!-- HEADER -->
 
-<header class="header">
+  <header class="header">
 
-  <div>
+    <div class="header-left">
 
-    <div class="eyebrow">
-      AI PRODUCT MANAGER · PORTFOLIO
+      <h1>
+        <span class="header-icon">✦</span>
+        AI Product Manager
+        <span>Portfolio</span>
+      </h1>
+
+      <div class="tagline">
+        <span class="dot"></span>
+        AI Product Strategy
+        <span class="dot"></span>
+        Healthcare
+        <span class="dot"></span>
+        Machine Learning
+        <span class="dot"></span>
+        Data & Analytics
+      </div>
+
     </div>
-
-    <h1>
-      Building products where
-      <span>AI meets real problems.</span>
-    </h1>
-
-    <p class="subtitle">
-      AI Product Manager focused on healthcare, machine learning,
-      analytics and product strategy — from discovery and requirements
-      through AI/ML implementation and product delivery.
-    </p>
 
     <div class="header-actions">
 
-      <a class="button primary" href="myccangel/index.html">
-        <i class="fas fa-rocket"></i>
-        MyCCAngel Case Study
+      <a href="myccangel/index.html">
+        MyCCAngel
       </a>
 
-      <a class="button secondary" href="machine-learning/index.html">
-        <i class="fas fa-brain"></i>
-        Machine Learning
-      </a>
-
-      <a class="button secondary" href="analytics/index.html">
-        <i class="fas fa-chart-line"></i>
+      <a href="analytics/index.html">
         Analytics
       </a>
 
-    </div>
-
-  </div>
-
-
-  <div class="hero-card">
-
-    <div class="hero-card-top">
-
-      <strong>Portfolio overview</strong>
-
-      <div class="status">
-        <span class="status-dot"></span>
-        Product · AI · Data
-      </div>
-
-    </div>
-
-    <h3>Selected work</h3>
-
-    <div class="hero-metrics">
-
-      <div class="metric">
-        <strong>AI</strong>
-        <span>Product strategy</span>
-      </div>
-
-      <div class="metric">
-        <strong>ML</strong>
-        <span>Applied systems</span>
-      </div>
-
-      <div class="metric">
-        <strong>Data</strong>
-        <span>Analytics projects</span>
-      </div>
-
-      <div class="metric">
-        <strong>UX</strong>
-        <span>Product design</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</header>
-
-
-<!-- ================= STATS ================= -->
-
-<div class="stats">
-
-  <div class="stat">
-    <div class="stat-icon">
-      <i class="fas fa-heart-pulse"></i>
-    </div>
-    <div>
-      <strong>AI Healthcare</strong>
-      <span>Product focus</span>
-    </div>
-  </div>
-
-  <div class="stat">
-    <div class="stat-icon">
-      <i class="fas fa-chart-line"></i>
-    </div>
-    <div>
-      <strong>Analytics</strong>
-      <span>Data projects</span>
-    </div>
-  </div>
-
-  <div class="stat">
-    <div class="stat-icon">
-      <i class="fas fa-microchip"></i>
-    </div>
-    <div>
-      <strong>Machine Learning</strong>
-      <span>Applied AI</span>
-    </div>
-  </div>
-
-  <div class="stat">
-    <div class="stat-icon">
-      <i class="fas fa-layer-group"></i>
-    </div>
-    <div>
-      <strong>End-to-End</strong>
-      <span>Product ownership</span>
-    </div>
-  </div>
-
-</div>
-
-
-<!-- ================= SELECTED WORK ================= -->
-
-<section class="section">
-
-  <div class="section-header">
-
-    <div>
-      <div class="eyebrow">SELECTED WORK</div>
-
-      <h2>Projects that show how I think.</h2>
-    </div>
-
-    <p>
-      A combination of product strategy, AI/ML systems,
-      healthcare product development and data analytics.
-    </p>
-
-  </div>
-
-
-  <div class="projects">
-
-    <!-- MYCCANGEL -->
-
-    <article class="project">
-
-      <div class="project-icon">
-        <i class="fas fa-heart-pulse"></i>
-      </div>
-
-      <h3>MyCCAngel</h3>
-
-      <p>
-        AI-powered healthcare community designed around
-        verification, personalization, recommendations and
-        everyday patient support.
-      </p>
-
-      <div class="project-tags">
-        <span>AI Product</span>
-        <span>Healthcare</span>
-        <span>UX</span>
-        <span>ML</span>
-      </div>
-
-      <a class="project-link" href="myccangel/index.html">
-        View case study
-        <i class="fas fa-arrow-right"></i>
+      <a href="machine-learning/index.html">
+        Machine Learning
       </a>
 
-    </article>
+    </div>
+
+  </header>
 
 
-    <!-- MACHINE LEARNING -->
+  <!-- STATS -->
 
-    <article class="project">
+  <section class="stats">
 
-      <div class="project-icon">
-        <i class="fas fa-brain"></i>
+    <div class="stat-card">
+      <div class="stat-icon">◈</div>
+      <div>
+        <span class="stat-label">Product</span>
+        <span class="stat-value">1</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">◫</div>
+      <div>
+        <span class="stat-label">Analytics</span>
+        <span class="stat-value">2</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">▣</div>
+      <div>
+        <span class="stat-label">Documents</span>
+        <span class="stat-value">5</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">✦</div>
+      <div>
+        <span class="stat-label">ML / AI</span>
+        <span class="stat-value">3+</span>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- MAIN -->
+
+  <main class="main-layout">
+
+
+    <!-- PROJECT TREE -->
+
+    <aside class="tree-panel">
+
+      <div class="tree-title">
+        ◫ &nbsp; Portfolio Structure
       </div>
 
-      <h3>Machine Learning</h3>
+      <div class="tree">
 
-      <p>
-        Applied machine learning work covering model development,
-        evaluation, preprocessing and practical AI problem solving.
-      </p>
-
-      <div class="project-tags">
-        <span>Python</span>
-        <span>ML</span>
-        <span>Data</span>
-        <span>Modeling</span>
-      </div>
-
-      <a class="project-link" href="machine-learning/index.html">
-        View ML work
-        <i class="fas fa-arrow-right"></i>
-      </a>
-
-    </article>
-
-
-    <!-- ANALYTICS -->
-
-    <article class="project">
-
-      <div class="project-icon">
-        <i class="fas fa-chart-column"></i>
-      </div>
-
-      <h3>Data & Analytics</h3>
-
-      <p>
-        Interactive analytics projects exploring healthcare,
-        YouTube creators, demographics, trends and business insights.
-      </p>
-
-      <div class="project-tags">
-        <span>Tableau</span>
-        <span>Analytics</span>
-        <span>SQL</span>
-        <span>Visualization</span>
-      </div>
-
-      <a class="project-link" href="analytics/index.html">
-        View analytics
-        <i class="fas fa-arrow-right"></i>
-      </a>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- ================= MYCCANGEL FEATURE ================= -->
-
-<section class="section">
-
-  <div class="feature">
-
-    <div>
-
-      <div class="eyebrow">
-        FEATURED CASE STUDY
-      </div>
-
-      <h2>MyCCAngel</h2>
-
-      <p>
-        A healthcare AI product built around a simple principle:
-        technology should solve meaningful patient problems while
-        maintaining trust and safety.
-      </p>
-
-      <div class="feature-list">
-
-        <div>
-          <i class="fas fa-check-circle"></i>
-          Product vision & strategy
+        <div class="tree-row folder">
+          <span class="tree-icon">▾</span>
+          myccangel-portfolio
         </div>
 
-        <div>
-          <i class="fas fa-check-circle"></i>
-          AI / ML product architecture
-        </div>
 
-        <div>
-          <i class="fas fa-check-circle"></i>
-          Recommendation engine
-        </div>
+        <div class="tree-indent">
 
-        <div>
-          <i class="fas fa-check-circle"></i>
-          Medical report verification
-        </div>
+          <div class="tree-row folder">
+            <span class="tree-icon">▾</span>
+            assets
+          </div>
 
-        <div>
-          <i class="fas fa-check-circle"></i>
-          UX and product requirements
+          <div class="tree-indent">
+
+            <div class="tree-row folder">
+              <span class="tree-icon">▾</span>
+              myccangel
+            </div>
+
+            <div class="tree-indent-2">
+
+              <div class="tree-row file">
+                <span class="tree-icon">◇</span>
+                logo.png
+              </div>
+
+              <div class="tree-row file">
+                <span class="tree-icon">◇</span>
+                home.png
+              </div>
+
+              <div class="tree-row file">
+                <span class="tree-icon">◇</span>
+                profile.png
+              </div>
+
+              <div class="tree-row file">
+                <span class="tree-icon">◇</span>
+                ai.svg
+              </div>
+
+              <div class="tree-row file">
+                <span class="tree-icon">◇</span>
+                trust.svg
+              </div>
+
+            </div>
+
+
+            <div class="tree-row folder">
+              <span class="tree-icon">▾</span>
+              analytics
+            </div>
+
+            <div class="tree-indent-2">
+
+              <div class="tree-row file">
+                <span class="tree-icon">◇</span>
+                Health_Dashboard.png
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="tree-row folder">
+            <span class="tree-icon">▾</span>
+            analytics
+          </div>
+
+          <div class="tree-indent">
+
+            <div class="tree-row folder">
+              <span class="tree-icon">▾</span>
+              diabetes
+            </div>
+
+            <div class="tree-indent-2">
+
+              <div class="tree-row file">
+                <span class="tree-icon">◇</span>
+                index.html
+                <span class="badge">live</span>
+              </div>
+
+            </div>
+
+            <div class="tree-row folder">
+              <span class="tree-icon">▾</span>
+              youtube
+            </div>
+
+            <div class="tree-indent-2">
+
+              <div class="tree-row file">
+                <span class="tree-icon">◇</span>
+                index.html
+                <span class="badge">live</span>
+              </div>
+
+            </div>
+
+            <div class="tree-row file">
+              <span class="tree-icon">◇</span>
+              index.html
+            </div>
+
+          </div>
+
+
+          <div class="tree-row folder">
+            <span class="tree-icon">▾</span>
+            docs
+          </div>
+
+          <div class="tree-indent">
+
+            <div class="tree-row file">
+              <span class="tree-icon">◇</span>
+              MyCCAngel_CaseStudy_Deck.pdf
+            </div>
+
+            <div class="tree-row file">
+              <span class="tree-icon">◇</span>
+              MyCCAngel_CaseStudy_Full.pdf
+            </div>
+
+            <div class="tree-row file">
+              <span class="tree-icon">◇</span>
+              MyCCAngel_CaseStudy_OnePager.pdf
+            </div>
+
+            <div class="tree-row file">
+              <span class="tree-icon">◇</span>
+              MyCCAngel_PRD.pdf
+            </div>
+
+            <div class="tree-row file">
+              <span class="tree-icon">◇</span>
+              MyCCAngel_Roadmap.pdf
+            </div>
+
+          </div>
+
+
+          <div class="tree-row folder">
+            <span class="tree-icon">▾</span>
+            machine-learning
+          </div>
+
+          <div class="tree-indent">
+
+            <div class="tree-row file">
+              <span class="tree-icon">◇</span>
+              index.html
+            </div>
+
+          </div>
+
+
+          <div class="tree-row folder">
+            <span class="tree-icon">▾</span>
+            myccangel
+          </div>
+
+          <div class="tree-indent">
+
+            <div class="tree-row file active">
+              <span class="tree-icon">◇</span>
+              index.html
+              <span class="badge">featured</span>
+            </div>
+
+          </div>
+
+
+          <div class="tree-row file">
+            <span class="tree-icon">◇</span>
+            README.md
+          </div>
+
+          <div class="tree-row file">
+            <span class="tree-icon">◇</span>
+            index.html
+          </div>
+
+          <div class="tree-row file">
+            <span class="tree-icon">◇</span>
+            script.js
+          </div>
+
+          <div class="tree-row file">
+            <span class="tree-icon">◇</span>
+            style.css
+          </div>
+
         </div>
 
       </div>
 
-      <a
-        class="project-link"
-        href="myccangel/index.html"
-      >
-        Explore the full case study
-        <i class="fas fa-arrow-right"></i>
-      </a>
-
-    </div>
+    </aside>
 
 
-    <div class="feature-visual">
+    <!-- PREVIEW -->
 
-      <img
-        src="assets/myccangel/home.png"
-        alt="MyCCAngel healthcare product interface"
-      >
+    <section class="preview">
 
-    </div>
+      <div class="preview-header">
 
-  </div>
+        <h2 class="preview-title">
+          <span class="preview-title-icon">✦</span>
+          Featured Work
+        </h2>
 
-</section>
+        <span class="file-path">
+          myccangel/index.html
+        </span>
 
-
-<!-- ================= ANALYTICS ================= -->
-
-<section class="section">
-
-  <div class="section-header">
-
-    <div>
-
-      <div class="eyebrow">
-        DATA & ANALYTICS
       </div>
 
-      <h2>Turning data into decisions.</h2>
 
-    </div>
-
-    <p>
-      Analytics projects demonstrate practical data exploration,
-      visualization and communication.
-    </p>
-
-  </div>
-
-
-  <div class="analytics">
-
-    <article class="analytics-card">
-
-      <span class="small">
-        Healthcare analytics
-      </span>
-
-      <h3>Diabetes Health Dashboard</h3>
-
-      <p>
-        Explore diabetes status, health indicators,
-        lifestyle factors and demographic patterns.
+      <p class="intro">
+        <strong>AI product work across healthcare, machine learning and analytics.</strong>
+        This portfolio highlights the product thinking, technical collaboration,
+        experimentation and analytical work behind selected projects.
       </p>
 
-      <a
-        class="analytics-link"
-        href="analytics/diabetes/index.html"
-      >
-        View dashboard
-        <i class="fas fa-arrow-right"></i>
-      </a>
 
-    </article>
+      <!-- PROJECT CARDS -->
+
+      <div class="project-grid">
 
 
-    <article class="analytics-card youtube">
+        <article class="project-card">
 
-      <span class="small">
-        YouTube analytics
-      </span>
+          <div class="project-icon">✦</div>
 
-      <h3>YouTube Creator Analysis</h3>
+          <h3>MyCCAngel</h3>
 
-      <p>
-        Analyze subscribers, creator performance,
-        earnings and geographic patterns.
-      </p>
+          <p>
+            AI-powered healthcare product focused on trust,
+            personalization, patient experience and responsible AI.
+          </p>
 
-      <a
-        class="analytics-link"
-        href="analytics/youtube/index.html"
-      >
-        View analysis
-        <i class="fas fa-arrow-right"></i>
-      </a>
+          <span class="project-tag">
+            AI PRODUCT · HEALTHCARE
+          </span>
 
-    </article>
+          <a class="project-link" href="myccangel/index.html">
+            View case study →
+          </a>
 
-  </div>
-
-</section>
+        </article>
 
 
-<!-- ================= DOCUMENTS ================= -->
+        <article class="project-card">
 
-<section class="section">
+          <div class="project-icon">▥</div>
 
-  <div class="documents">
+          <h3>Data & Analytics</h3>
 
-    <div>
+          <p>
+            Interactive analytical projects covering healthcare
+            indicators and YouTube creator data.
+          </p>
 
-      <div class="eyebrow">
-        MYCCANGEL DOCUMENTATION
+          <span class="project-tag">
+            ANALYTICS · BI
+          </span>
+
+          <a class="project-link" href="analytics/index.html">
+            Explore analytics →
+          </a>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-icon">◉</div>
+
+          <h3>Diabetes Health Analysis</h3>
+
+          <p>
+            Descriptive analysis of diabetes-related health,
+            lifestyle and demographic indicators.
+          </p>
+
+          <span class="project-tag">
+            HEALTHCARE ANALYTICS
+          </span>
+
+          <a class="project-link" href="analytics/diabetes/index.html">
+            View project →
+          </a>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-icon">▷</div>
+
+          <h3>YouTube Analytics</h3>
+
+          <p>
+            Exploration of creator performance, subscribers,
+            geography and entertainment-channel trends.
+          </p>
+
+          <span class="project-tag">
+            DATA VISUALIZATION
+          </span>
+
+          <a class="project-link" href="analytics/youtube/index.html">
+            View project →
+          </a>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-icon">✧</div>
+
+          <h3>Machine Learning</h3>
+
+          <p>
+            Selected machine-learning work demonstrating model
+            development, experimentation and applied analysis.
+          </p>
+
+          <span class="project-tag">
+            ML · AI
+          </span>
+
+          <a class="project-link" href="machine-learning/index.html">
+            View projects →
+          </a>
+
+        </article>
+
       </div>
 
-      <h3>Want to see the work behind the product?</h3>
 
-      <p>
-        Explore the PRD, roadmap, full case study and supporting
-        product documentation.
-      </p>
+      <!-- DOCUMENTS -->
 
-    </div>
+      <div class="documents">
 
-    <a
-      class="button"
-      href="myccangel/index.html"
-    >
-      View documentation
-      <i class="fas fa-arrow-right"></i>
-    </a>
+        <h3>
+          Supporting MyCCAngel work
+        </h3>
 
-  </div>
+        <div class="doc-list">
 
-</section>
+          <a
+            class="doc"
+            href="docs/MyCCAngel_CaseStudy_Deck.pdf"
+            target="_blank"
+          >
+            <span class="doc-icon">▣</span>
+            Case Study Deck
+          </a>
+
+          <a
+            class="doc"
+            href="docs/MyCCAngel_CaseStudy_Full.pdf"
+            target="_blank"
+          >
+            <span class="doc-icon">▣</span>
+            Full Case Study
+          </a>
+
+          <a
+            class="doc"
+            href="docs/MyCCAngel_CaseStudy_OnePager.pdf"
+            target="_blank"
+          >
+            <span class="doc-icon">▣</span>
+            One-Pager
+          </a>
+
+          <a
+            class="doc"
+            href="docs/MyCCAngel_PRD.pdf"
+            target="_blank"
+          >
+            <span class="doc-icon">▣</span>
+            PRD
+          </a>
+
+          <a
+            class="doc"
+            href="docs/MyCCAngel_Roadmap.pdf"
+            target="_blank"
+          >
+            <span class="doc-icon">▣</span>
+            Roadmap
+          </a>
+
+        </div>
+
+      </div>
 
 
-<!-- ================= FOOTER ================= -->
+      <div class="cta">
+        <strong>Portfolio focus:</strong>
+        product strategy → AI/ML → healthcare → analytics →
+        responsible product decisions.
+      </div>
 
-<footer>
+    </section>
 
-  <div class="footer-inner">
+  </main>
 
-    <span>
-      AI Product Manager · Healthcare · AI · Data
-    </span>
 
-    <span>
-      © 2026
-    </span>
-
-  </div>
-
-</footer>
+  <footer>
+    AI Product Manager Portfolio · MyCCAngel · Healthcare · AI · Analytics
+  </footer>
 
 </div>
 
