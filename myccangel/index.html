@@ -2,26 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>MyCCAngel | AI Product Case Study</title>
 
-<meta
-  name="description"
-  content="MyCCAngel AI healthcare product case study — Founding Product Lead, AI, healthcare, UX and product strategy."
->
+<meta name="description"
+content="MyCCAngel AI healthcare product case study — Founding Product Lead, AI, healthcare, UX and product strategy.">
 
 <style>
 :root{
   --ink:#292044;
-  --ink-soft:#40365b;
   --muted:#6d6878;
   --purple:#3b2a68;
   --purple2:#70578f;
   --lav:#f2e7fa;
   --lav2:#fbf8fd;
   --line:#e7dff0;
-  --white:#fff;
   --max:1180px;
 }
 
@@ -38,7 +34,6 @@ body{
   font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
   color:var(--ink);
   line-height:1.6;
-  background:#fff;
 }
 
 a{
@@ -82,12 +77,8 @@ img{
   font-weight:700;
 }
 
-.nav-links a{
-  color:var(--muted);
-}
-
 .nav-links a:hover{
-  color:var(--purple);
+  color:var(--purple2);
 }
 
 /* HERO */
@@ -157,12 +148,14 @@ h1{
   transform:rotate(1deg);
 }
 
-.hero-shot img{
+.hero-shot img,
+.screen img,
+.diagram img{
   width:100%;
   border-radius:12px;
 }
 
-/* GENERAL */
+/* SECTIONS */
 
 .section{
   max-width:var(--max);
@@ -193,7 +186,7 @@ h1{
   max-width:790px;
 }
 
-/* PROBLEM / ROLE */
+/* ROLE */
 
 .two{
   display:grid;
@@ -208,10 +201,17 @@ h1{
   margin-top:24px;
 }
 
-.role{
+.role,
+.stat,
+.screen,
+.decision,
+.ai-card{
   background:#fff;
   border:1px solid var(--line);
   border-radius:16px;
+}
+
+.role{
   padding:18px;
   font-weight:700;
 }
@@ -227,9 +227,6 @@ h1{
 
 .stat{
   padding:24px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
 }
 
 .stat strong{
@@ -256,15 +253,7 @@ h1{
 
 .screen{
   padding:14px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
   box-shadow:0 12px 35px rgba(48,31,76,.08);
-}
-
-.screen img{
-  width:100%;
-  border-radius:12px;
 }
 
 figcaption{
@@ -279,9 +268,6 @@ figcaption{
 .ai-card{
   margin-top:24px;
   padding:28px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
 }
 
 .ai-card h3{
@@ -301,11 +287,6 @@ figcaption{
   background:#fff;
 }
 
-.diagram img{
-  width:100%;
-  border-radius:8px;
-}
-
 /* DECISIONS */
 
 .decisions{
@@ -317,9 +298,6 @@ figcaption{
 
 .decision{
   padding:24px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
 }
 
 .decision .num{
@@ -348,8 +326,8 @@ figcaption{
   padding:42px;
 }
 
-.pause h2{
-  color:#fff;
+.pause .eyebrow{
+  color:#cdb9df;
 }
 
 .pause p{
@@ -371,14 +349,11 @@ figcaption{
   padding:18px;
 }
 
-.pause-item strong{
-  display:block;
-  margin-bottom:7px;
-}
-
 .pause-item span{
+  display:block;
   font-size:14px;
   color:#d4cddd;
+  margin-top:6px;
 }
 
 /* LESSONS */
@@ -408,80 +383,13 @@ figcaption{
   color:var(--muted);
 }
 
-/* WORK ARTIFACTS */
+/* DOCUMENTS */
 
-.artifacts-intro{
+.docs{
   display:flex;
-  justify-content:space-between;
-  gap:30px;
-  align-items:end;
-}
-
-.artifacts{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-  margin-top:32px;
-}
-
-.artifact{
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  min-height:210px;
-  padding:26px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  transition:.2s ease;
-}
-
-.artifact:hover{
-  transform:translateY(-3px);
-  box-shadow:0 15px 35px rgba(48,31,76,.09);
-  border-color:#d7c8e3;
-}
-
-.artifact-type{
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-weight:850;
-  color:var(--purple2);
-  margin-bottom:10px;
-}
-
-.artifact h3{
-  margin:0 0 8px;
-  font-size:21px;
-}
-
-.artifact p{
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
-}
-
-.artifact-link{
-  margin-top:22px;
-  color:var(--purple);
-  font-size:14px;
-  font-weight:800;
-}
-
-/* CTA */
-
-.final-cta{
-  margin-top:35px;
-  padding:30px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-}
-
-.final-cta p{
-  margin:0 0 18px;
-  color:var(--muted);
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
 }
 
 .button{
@@ -495,19 +403,13 @@ figcaption{
 }
 
 .button:hover{
-  background:#2e2055;
+  background:var(--purple2);
 }
 
 .button.secondary{
   background:#fff;
   color:var(--purple);
   border:1px solid var(--line);
-}
-
-.buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
 }
 
 /* FOOTER */
@@ -543,14 +445,6 @@ figcaption{
   .lessons,
   .pause-grid{
     grid-template-columns:1fr 1fr;
-  }
-
-  .artifacts{
-    grid-template-columns:1fr;
-  }
-
-  .artifacts-intro{
-    display:block;
   }
 
   .nav-links{
@@ -597,7 +491,9 @@ figcaption{
   <div class="nav-inner">
 
     <a class="brand" href="../index.html">
-      <img src="../assets/myccangel/logo.png" alt="MyCCAngel">
+      <img
+        src="../assets/myccangel/logo.png"
+        alt="MyCCAngel">
     </a>
 
     <div class="nav-links">
@@ -606,7 +502,6 @@ figcaption{
       <a href="#product">Product</a>
       <a href="#ai">AI</a>
       <a href="#decisions">Decisions</a>
-      <a href="#artifacts">Work</a>
       <a href="#reflection">Reflection</a>
     </div>
 
@@ -645,10 +540,11 @@ figcaption{
     </div>
 
     <div class="hero-shot">
+
       <img
         src="../assets/myccangel/home.png"
-        alt="MyCCAngel product home screen"
-      >
+        alt="MyCCAngel product home screen">
+
     </div>
 
   </div>
@@ -656,7 +552,7 @@ figcaption{
 </header>
 
 
-<!-- PROBLEM + ROLE -->
+<!-- PROBLEM -->
 
 <section class="section" id="problem">
 
@@ -664,20 +560,24 @@ figcaption{
 
     <div>
 
-      <div class="eyebrow">01 · The problem</div>
+      <div class="eyebrow">
+        01 · The problem
+      </div>
 
-      <h2>Patients live between two worlds.</h2>
+      <h2>
+        Patients live between two worlds.
+      </h2>
 
       <p class="lead">
-        Clinical care happens in short appointments. Everyday life
-        happens everywhere else — during travel, at work, late at night,
-        and between flare-ups.
+        Clinical care happens in short appointments.
+        Everyday life happens everywhere else — during travel,
+        at work, late at night, and between flare-ups.
       </p>
 
       <p class="lead">
-        MyCCAngel was designed to close that gap with a trusted patient
-        community, centralized resources, practical support, and
-        personalized AI-driven experiences.
+        MyCCAngel was designed to close that gap with a trusted
+        patient community, centralized resources, practical support,
+        and personalized AI-driven experiences.
       </p>
 
     </div>
@@ -685,9 +585,13 @@ figcaption{
 
     <div>
 
-      <div class="eyebrow">My role</div>
+      <div class="eyebrow">
+        My role
+      </div>
 
-      <h2>Founding Product Lead</h2>
+      <h2>
+        Founding Product Lead
+      </h2>
 
       <div class="role-grid">
 
@@ -716,17 +620,17 @@ figcaption{
 
     <div class="stat">
       <strong>200</strong>
-      <span>manually collected and labeled medical reports</span>
+      <span>Manually collected and labeled medical reports</span>
     </div>
 
     <div class="stat">
       <strong>20+</strong>
-      <span>onboarding signals used for personalization</span>
+      <span>Onboarding signals used for personalization</span>
     </div>
 
     <div class="stat">
       <strong>8</strong>
-      <span>contributors at peak across product, design and engineering</span>
+      <span>Contributors at peak across product, design and engineering</span>
     </div>
 
   </div>
@@ -740,9 +644,13 @@ figcaption{
 
   <div class="inner">
 
-    <div class="eyebrow">02 · The product</div>
+    <div class="eyebrow">
+      02 · The product
+    </div>
 
-    <h2>Designed around the patient journey.</h2>
+    <h2>
+      Designed around the patient journey.
+    </h2>
 
     <p class="lead">
       The product combined verification, onboarding, personalization,
@@ -757,8 +665,7 @@ figcaption{
 
         <img
           src="../assets/myccangel/home.png"
-          alt="MyCCAngel home experience"
-        >
+          alt="MyCCAngel home experience">
 
         <figcaption>
           Home experience — personalized content and patient support.
@@ -771,8 +678,7 @@ figcaption{
 
         <img
           src="../assets/myccangel/profile.png"
-          alt="MyCCAngel patient profile"
-        >
+          alt="MyCCAngel patient profile">
 
         <figcaption>
           Patient profile — medical context becomes product signal.
@@ -787,13 +693,17 @@ figcaption{
 </section>
 
 
-<!-- AI / ML -->
+<!-- AI -->
 
 <section class="section" id="ai">
 
-  <div class="eyebrow">03 · AI / ML</div>
+  <div class="eyebrow">
+    03 · AI / ML
+  </div>
 
-  <h2>AI was built into the product loop.</h2>
+  <h2>
+    AI was built into the product loop.
+  </h2>
 
   <p class="lead">
     The strongest AI decisions were not about adding a chatbot.
@@ -802,63 +712,74 @@ figcaption{
   </p>
 
 
+  <!-- VERIFICATION -->
+
   <div class="ai-card">
 
-    <h3>Medical report verification</h3>
+    <h3>
+      Medical report verification
+    </h3>
 
     <p>
-      Users uploaded medical reports that moved through OCR, text
-      cleaning and an SVM classifier before the verification decision.
-      The model was trained on a manually labeled dataset of 200 reports
-      and achieved approximately 91% accuracy on a held-out test split.
+      Users uploaded medical reports that moved through OCR,
+      text cleaning and an SVM classifier before the verification
+      decision. The model was trained on a manually labeled dataset
+      of 200 reports and achieved approximately 91% accuracy on a
+      held-out test split.
     </p>
 
     <div class="diagram">
 
       <img
         src="../assets/myccangel/verification-pipeline.png"
-        alt="Medical report verification pipeline"
-      >
+        alt="Medical report verification pipeline">
 
     </div>
 
   </div>
 
 
+  <!-- RECOMMENDATION -->
+
   <div class="ai-card">
 
-    <h3>Recommendation engine</h3>
+    <h3>
+      Recommendation engine
+    </h3>
 
     <p>
       The cold-start problem was solved at the product level:
       the onboarding questionnaire became the initial personalization
-      signal. Diagnosis, status, severity, daily-life impact and support
-      needs were mapped into recommendation logic before behavioral
-      data existed.
+      signal. Diagnosis, status, severity, daily-life impact and
+      support needs were mapped into recommendation logic before
+      behavioral data existed.
     </p>
 
     <div class="diagram">
 
       <img
         src="../assets/myccangel/recommendation-engine.png"
-        alt="Recommendation engine flow"
-      >
+        alt="MyCCAngel recommendation engine flow">
 
     </div>
 
   </div>
 
 
+  <!-- ASSISTANT -->
+
   <div class="ai-card">
 
-    <h3>AI healthcare assistant</h3>
+    <h3>
+      AI healthcare assistant
+    </h3>
 
     <p>
       I defined the requirements and designed the full assistant
-      experience. The development team built a functional conversational
-      NLP/ML pipeline. The next step was IBD-specific training on a
-      curated, trusted knowledge base, with guardrails to prevent
-      diagnosis or treatment recommendations.
+      experience. The development team built a functional
+      conversational NLP/ML pipeline. The next step was IBD-specific
+      training on a curated, trusted knowledge base, with guardrails
+      to prevent diagnosis or treatment recommendations.
     </p>
 
   </div>
@@ -866,15 +787,19 @@ figcaption{
 </section>
 
 
-<!-- PRODUCT DECISIONS -->
+<!-- DECISIONS -->
 
 <section class="section alt" id="decisions">
 
   <div class="inner">
 
-    <div class="eyebrow">04 · Product decisions</div>
+    <div class="eyebrow">
+      04 · Product decisions
+    </div>
 
-    <h2>Every feature had to answer a hard question.</h2>
+    <h2>
+      Every feature had to answer a hard question.
+    </h2>
 
 
     <div class="decisions">
@@ -905,9 +830,9 @@ figcaption{
         <div class="num">03</div>
         <h3>Prioritize everyday problems</h3>
         <p>
-          Practical needs such as toilet access mattered as much as
-          educational content because they directly affect daily
-          quality of life.
+          Practical needs such as toilet access mattered as much
+          as educational content because they directly affect
+          daily quality of life.
         </p>
       </div>
 
@@ -916,8 +841,8 @@ figcaption{
         <div class="num">04</div>
         <h3>Don't build partnerships prematurely</h3>
         <p>
-          Directories and partner ecosystems were postponed until a
-          working product could demonstrate value to healthcare
+          Directories and partner ecosystems were postponed until
+          a working product could demonstrate value to healthcare
           organizations.
         </p>
       </div>
@@ -927,9 +852,9 @@ figcaption{
         <div class="num">05</div>
         <h3>Don't ship unsafe AI</h3>
         <p>
-          The assistant was explicitly scoped away from diagnosis and
-          treatment, with trusted-content retrieval and escalation
-          planned before launch.
+          The assistant was explicitly scoped away from diagnosis
+          and treatment, with trusted-content retrieval and
+          escalation planned before launch.
         </p>
       </div>
 
@@ -938,8 +863,9 @@ figcaption{
         <div class="num">06</div>
         <h3>Prioritization over feature volume</h3>
         <p>
-          The MVP focused resources on the highest-risk, highest-value
-          flow: signup → verification → onboarding → recommendations.
+          The MVP focused resources on the highest-risk,
+          highest-value flow:
+          signup → verification → onboarding → recommendations.
         </p>
       </div>
 
@@ -950,17 +876,19 @@ figcaption{
 </section>
 
 
-<!-- HONEST REFLECTION -->
+<!-- REFLECTION -->
 
 <section class="section" id="reflection">
 
   <div class="pause">
 
-    <div class="eyebrow" style="color:#cdb9df">
+    <div class="eyebrow">
       05 · Honest reflection
     </div>
 
-    <h2>Why development paused before launch.</h2>
+    <h2>
+      Why development paused before launch.
+    </h2>
 
     <p>
       MyCCAngel reached substantial implementation before development
@@ -984,8 +912,8 @@ figcaption{
       <div class="pause-item">
         <strong>Trusted content</strong>
         <span>
-          The assistant needed a curated IBD knowledge base rather than
-          unsupported open-ended generation.
+          The assistant needed a curated IBD knowledge base rather
+          than unsupported open-ended generation.
         </span>
       </div>
 
@@ -1002,13 +930,15 @@ figcaption{
   </div>
 
 
-  <!-- LESSONS -->
-
   <div style="margin-top:75px">
 
-    <div class="eyebrow">06 · What I learned</div>
+    <div class="eyebrow">
+      06 · What I learned
+    </div>
 
-    <h2>Five lessons from building an AI product in healthcare.</h2>
+    <h2>
+      Five lessons from building an AI product in healthcare.
+    </h2>
 
 
     <div class="lessons">
@@ -1038,8 +968,7 @@ figcaption{
       <div class="lesson">
         <strong>Prioritization beats production.</strong>
         <span>
-          Deciding what not to build was some of the highest-leverage
-          work.
+          Deciding what not to build was some of the highest-leverage work.
         </span>
       </div>
 
@@ -1057,240 +986,63 @@ figcaption{
 </section>
 
 
-<!-- WORK ARTIFACTS -->
+<!-- DOCUMENTS -->
 
-<section class="section alt" id="artifacts">
+<section class="section alt">
 
   <div class="inner">
 
-    <div class="artifacts-intro">
-
-      <div>
-
-        <div class="eyebrow">07 · Work artifacts</div>
-
-        <h2>The work behind the product.</h2>
-
-        <p class="lead">
-          These documents show the product thinking behind MyCCAngel —
-          from the original roadmap and requirements to the detailed
-          case study and visual product story.
-        </p>
-
-      </div>
-
+    <div class="eyebrow">
+      07 · Go deeper
     </div>
 
+    <h2>
+      The complete product record.
+    </h2>
 
-    <div class="artifacts">
+    <p class="lead">
+      The website is the executive story. The supporting documents
+      contain the detailed requirements, original roadmap, full case
+      study and visual walkthrough.
+    </p>
 
+
+    <div class="docs">
 
       <a
-        class="artifact"
+        class="button"
         href="../docs/MyCCAngel_CaseStudy_Deck.pdf"
-        target="_blank"
-      >
-
-        <div>
-
-          <div class="artifact-type">
-            Visual case study
-          </div>
-
-          <h3>Case Study Deck</h3>
-
-          <p>
-            The complete storytelling version of the project,
-            covering the problem, research, product decisions,
-            AI/ML work, implementation and reflection.
-          </p>
-
-        </div>
-
-        <div class="artifact-link">
-          View deck →
-        </div>
-
+        target="_blank">
+        Case Study Deck
       </a>
 
-
       <a
-        class="artifact"
-        href="../docs/MyCCAngel_CaseStudy_Full.pdf"
-        target="_blank"
-      >
-
-        <div>
-
-          <div class="artifact-type">
-            Detailed case study
-          </div>
-
-          <h3>Full Case Study</h3>
-
-          <p>
-            A deeper record of the product background, strategy,
-            contributions, AI development, challenges and lessons learned.
-          </p>
-
-        </div>
-
-        <div class="artifact-link">
-          Read full case study →
-        </div>
-
-      </a>
-
-
-      <a
-        class="artifact"
-        href="../docs/MyCCAngel_PRD.pdf"
-        target="_blank"
-      >
-
-        <div>
-
-          <div class="artifact-type">
-            Product documentation
-          </div>
-
-          <h3>Product Requirements Document</h3>
-
-          <p>
-            Detailed requirements covering the user journey,
-            verification, onboarding, recommendation engine,
-            AI assistant, community, backend architecture and roadmap.
-          </p>
-
-        </div>
-
-        <div class="artifact-link">
-          View PRD →
-        </div>
-
-      </a>
-
-
-      <a
-        class="artifact"
-        href="../docs/MyCCAngel_Roadmap.pdf"
-        target="_blank"
-      >
-
-        <div>
-
-          <div class="artifact-type">
-            Product strategy
-          </div>
-
-          <h3>Original Product Roadmap</h3>
-
-          <p>
-            The original MVP strategy showing product principles,
-            priorities, phased development, validation and long-term
-            expansion thinking.
-          </p>
-
-        </div>
-
-        <div class="artifact-link">
-          View roadmap →
-        </div>
-
-      </a>
-
-
-      <a
-        class="artifact"
+        class="button secondary"
         href="../docs/MyCCAngel_CaseStudy_OnePager.pdf"
-        target="_blank"
-      >
-
-        <div>
-
-          <div class="artifact-type">
-            Executive summary
-          </div>
-
-          <h3>One-Page Case Study</h3>
-
-          <p>
-            A concise overview of the product, your contributions,
-            AI models, recommendation engine, verification pipeline
-            and project status.
-          </p>
-
-        </div>
-
-        <div class="artifact-link">
-          View one-pager →
-        </div>
-
+        target="_blank">
+        One Pager
       </a>
 
+      <a
+        class="button secondary"
+        href="../docs/MyCCAngel_CaseStudy_Full.pdf"
+        target="_blank">
+        Full Case Study
+      </a>
 
-      <div class="artifact">
+      <a
+        class="button secondary"
+        href="../docs/MyCCAngel_PRD.pdf"
+        target="_blank">
+        PRD
+      </a>
 
-        <div>
-
-          <div class="artifact-type">
-            Product evidence
-          </div>
-
-          <h3>Product Screens</h3>
-
-          <p>
-            The live page above shows selected MyCCAngel screens,
-            including the home experience and patient profile.
-          </p>
-
-        </div>
-
-        <div class="artifact-link">
-          Explore above ↑
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-    <div class="final-cta">
-
-      <p>
-        Want the short version? Start with the one-pager.
-        Want to understand how I think? Read the PRD and roadmap.
-        Want the full story? Open the case study deck.
-      </p>
-
-      <div class="buttons">
-
-        <a
-          class="button"
-          href="../docs/MyCCAngel_CaseStudy_OnePager.pdf"
-          target="_blank"
-        >
-          Start with the One-Pager →
-        </a>
-
-        <a
-          class="button secondary"
-          href="../docs/MyCCAngel_PRD.pdf"
-          target="_blank"
-        >
-          View PRD
-        </a>
-
-        <a
-          class="button secondary"
-          href="../docs/MyCCAngel_CaseStudy_Deck.pdf"
-          target="_blank"
-        >
-          View Case Study Deck
-        </a>
-
-      </div>
+      <a
+        class="button secondary"
+        href="../docs/MyCCAngel_Roadmap.pdf"
+        target="_blank">
+        Original Roadmap
+      </a>
 
     </div>
 
