@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBD Medical Report Classifier | Machine Learning</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    :root {
+      --ink: #18202f;
+      --muted: #667085;
+      --line: #e6e9ef;
+      --purple: #6d5dfc;
+      --navy: #151b2b;
+    }
+
+    body { background: #fafbfc; color: var(--ink); }
+
+    .nav {
+      max-width: 1250px;
+      margin: auto;
+      padding: 24px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand { text-decoration: none; color: var(--ink); font-weight: 800; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 650; }
+    .nav a:hover { color: var(--ink); }
+
+    .hero {
+      max-width: 1250px;
+      margin: auto;
+      padding: 60px 6% 50px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 38px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .back-link:hover { color: var(--purple); }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--purple);
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--purple); }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: .96;
+      letter-spacing: -.065em;
+      margin: 0 0 22px;
+    }
+
+    .hero h1 span { color: var(--purple); }
+
+    .hero p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin: 0 0 32px;
+    }
+
+    /* LIVE BADGE + BUTTONS */
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 800;
+      color: #065f46;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    .btn-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 20px;
+      background: var(--purple);
+      color: white;
+      border-radius: 10px;
+      font-size: .85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .btn-demo:hover { background: #5a4de8; }
+
+    .btn-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 20px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      border-radius: 10px;
+      font-size: .85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .btn-github:hover { border-color: #b0b8c9; }
+
+    /* META TAGS */
+    .meta {
+      max-width: 1250px;
+      margin: 0 auto 50px;
+      padding: 0 6%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta span {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 8px 14px;
+      color: #596273;
+      font-size: .74rem;
+      font-weight: 700;
+    }
+
+    /* STATS */
+    .stats-row {
+      max-width: 1250px;
+      margin: 0 auto 50px;
+      padding: 0 6%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.65rem;
+      color: var(--purple);
+      margin-bottom: 4px;
+    }
+
+    .stat-card span { font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+
+    /* PIPELINE */
+    .section {
+      max-width: 1250px;
+      margin: 0 auto 50px;
+      padding: 0 6%;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      letter-spacing: -.03em;
+      margin: 0 0 20px;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .pipeline-step {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      position: relative;
+    }
+
+    .pipeline-step::after {
+      content: "→";
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 1rem;
+      z-index: 1;
+    }
+
+    .pipeline-step:last-child::after { display: none; }
+
+    .step-num {
+      display: block;
+      font-size: .65rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      color: var(--purple);
+      margin-bottom: 10px;
+    }
+
+    .step-icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+
+    .pipeline-step h3 {
+      font-size: .85rem;
+      margin: 0 0 5px;
+    }
+
+    .pipeline-step p {
+      font-size: .72rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* KEY FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 26px 28px;
+    }
+
+    .feature-card h3 { margin: 0 0 8px; font-size: 1rem; }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.65;
+    }
+
+    /* CONTEXT BLOCK */
+    .context {
+      max-width: 1250px;
+      margin: 0 auto 90px;
+      padding: 0 6%;
+    }
+
+    .context-inner {
+      background: var(--navy);
+      color: white;
+      border-radius: 22px;
+      padding: 38px 42px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .context-inner h2 { margin: 0 0 12px; font-size: 1.3rem; }
+
+    .context-inner p {
+      color: #adb5c7;
+      line-height: 1.7;
+      margin: 0 0 16px;
+      font-size: .92rem;
+    }
+
+    .context-inner a {
+      color: #a5b4fc;
+      font-size: .85rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .context-inner a:hover { color: white; }
+
+    .context-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .c-stat {
+      background: rgba(255,255,255,.07);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .c-stat strong {
+      display: block;
+      font-size: 1.8rem;
+      color: #a5b4fc;
+      margin-bottom: 4px;
+    }
+
+    .c-stat span { font-size: .75rem; color: #adb5c7; }
+
+    footer { text-align: center; padding: 30px; color: var(--muted); font-size: .82rem; }
+
+    @media (max-width: 900px) {
+      .pipeline { grid-template-columns: 1fr 1fr; }
+      .pipeline-step::after { display: none; }
+      .features { grid-template-columns: 1fr; }
+      .context-inner { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="../../index.html" class="nav-brand">AI Product Portfolio</a>
+  <a href="../index.html">← All ML projects</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <a href="../index.html" class="back-link">← Back to Machine Learning</a>
+    <div class="eyebrow">SVM · NLP · HEALTHCARE AI</div>
+    <h1>IBD Medical Report<br><span>Classifier.</span></h1>
+    <p>
+      A Support Vector Machine classifier that verifies whether an uploaded
+      medical report confirms an IBD diagnosis — built to gate access to the
+      MyCCAngel patient community and ensure only verified patients can join.
+    </p>
+    <div class="hero-actions">
+      <span class="live-badge">
+        <span class="live-dot"></span>
+        Live on Render
+      </span>
+      <a href="https://ibd-medical-report-classifier.onrender.com" target="_blank" class="btn-demo">
+        Try live demo →
+      </a>
+      <a href="https://github.com/Baqer0/IBD_MedicalReport_Classifier" target="_blank" class="btn-github">
+        View on GitHub →
+      </a>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section class="meta">
+    <span>Python</span>
+    <span>SVM (linear kernel)</span>
+    <span>TF-IDF vectorization</span>
+    <span>PyPDF2</span>
+    <span>Pytesseract OCR</span>
+    <span>Flask</span>
+    <span>NLTK</span>
+    <span>SMOTE oversampling</span>
+    <span>Render deployment</span>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-row">
+    <div class="stat-card">
+      <strong>~91%</strong>
+      <span>Test set accuracy</span>
+    </div>
+    <div class="stat-card">
+      <strong>200</strong>
+      <span>Manually labeled reports</span>
+    </div>
+    <div class="stat-card">
+      <strong>80/20</strong>
+      <span>Train/test split</span>
+    </div>
+    <div class="stat-card">
+      <strong>Live</strong>
+      <span>Deployed on Render</span>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="section">
+    <h2>How it works</h2>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <span class="step-num">01</span>
+        <span class="step-icon">📄</span>
+        <h3>Upload</h3>
+        <p>User submits a PDF or image of their medical report</p>
+      </div>
+      <div class="pipeline-step">
+        <span class="step-num">02</span>
+        <span class="step-icon">🔍</span>
+        <h3>OCR Extraction</h3>
+        <p>PyPDF2 (PDFs) or Pytesseract (images) extracts raw text</p>
+      </div>
+      <div class="pipeline-step">
+        <span class="step-num">03</span>
+        <span class="step-icon">🧹</span>
+        <h3>NLP Processing</h3>
+        <p>Text cleaned, lemmatized, stopwords removed, TF-IDF vectorized</p>
+      </div>
+      <div class="pipeline-step">
+        <span class="step-num">04</span>
+        <span class="step-icon">🤖</span>
+        <h3>SVM Classification</h3>
+        <p>Trained model predicts IBD or Non-IBD</p>
+      </div>
+      <div class="pipeline-step">
+        <span class="step-num">05</span>
+        <span class="step-icon">✅</span>
+        <h3>Access Decision</h3>
+        <p>Verified users gain access; others are rejected</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="section">
+    <h2>Key features</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Dual format support</h3>
+        <p>Handles both PDF documents and image files (PNG, JPG) using different extraction methods — pdfplumber for structured PDFs, Pytesseract OCR for scanned images and photos.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Class imbalance handling</h3>
+        <p>The training dataset had unequal class distribution between IBD and Non-IBD reports. SMOTE oversampling was applied during training to prevent the model from being biased toward the majority class.</p>
+      </div>
+      <div class="feature-card">
+        <h3>NLP pipeline</h3>
+        <p>Extracted text is cleaned using regular expressions, tokenized, lemmatized using NLTK WordNetLemmatizer, and converted into numerical features using TF-IDF (unigrams, bigrams, trigrams).</p>
+      </div>
+      <div class="feature-card">
+        <h3>Production deployment</h3>
+        <p>Deployed as a Flask web application on Render with gunicorn for production serving. Tesseract OCR is installed as a system package on the Render instance for image processing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXT BLOCK -->
+  <section class="context">
+    <div class="context-inner">
+      <div>
+        <h2>Built for MyCCAngel</h2>
+        <p>
+          This classifier was built as a real product feature — not an academic exercise.
+          MyCCAngel is an AI-powered healthcare platform for IBD patients where community
+          trust depends on verified membership.
+        </p>
+        <p>
+          The precision/recall tradeoff had direct product consequences: false rejects
+          turn away real patients; false accepts dilute the community. This shaped how
+          the model was evaluated and deployed.
+        </p>
+        <a href="../../myccangel/index.html">Read the full MyCCAngel case study →</a>
+      </div>
+      <div class="context-stats">
+        <div class="c-stat">
+          <strong>~91%</strong>
+          <span>Accuracy on held-out test set</span>
+        </div>
+        <div class="c-stat">
+          <strong>200</strong>
+          <span>Manually labeled reports</span>
+        </div>
+        <div class="c-stat">
+          <strong>SVM</strong>
+          <span>Linear kernel classifier</span>
+        </div>
+        <div class="c-stat">
+          <strong>Live</strong>
+          <span>Deployed and accessible</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 AI Product Portfolio</p>
+</footer>
+
+</body>
+</html>
