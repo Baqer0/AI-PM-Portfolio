@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poem Genre Classification | Machine Learning</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    :root {
+      --ink: #18202f; --muted: #667085; --line: #e6e9ef;
+      --amber: #d97706; --navy: #151b2b; --purple: #6d5dfc;
+    }
+
+    body { background: #fafbfc; color: var(--ink); }
+
+    .nav {
+      max-width: 1250px; margin: auto; padding: 24px 6%;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-brand { text-decoration: none; color: var(--ink); font-weight: 800; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 650; }
+    .nav a:hover { color: var(--ink); }
+
+    .hero { max-width: 1250px; margin: auto; padding: 60px 6% 50px; }
+
+    .back-link {
+      display: inline-block; margin-bottom: 38px;
+      color: var(--muted); text-decoration: none; font-size: .82rem; font-weight: 700;
+    }
+    .back-link:hover { color: var(--amber); }
+
+    .eyebrow {
+      display: flex; align-items: center; gap: 9px;
+      color: var(--amber); font-size: .7rem; font-weight: 850;
+      letter-spacing: .14em; margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--amber); }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: .96; letter-spacing: -.065em; margin: 0 0 22px;
+    }
+    .hero h1 span { color: var(--amber); }
+
+    .hero p {
+      max-width: 700px; color: var(--muted);
+      font-size: 1.05rem; line-height: 1.75; margin: 0;
+    }
+
+    .meta {
+      max-width: 1250px; margin: 0 auto 50px; padding: 0 6%;
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .meta span {
+      background: white; border: 1px solid var(--line);
+      border-radius: 100px; padding: 8px 14px;
+      color: #596273; font-size: .74rem; font-weight: 700;
+    }
+
+    .stats-row {
+      max-width: 1250px; margin: 0 auto 50px; padding: 0 6%;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    }
+    .stat-card {
+      background: white; border: 1px solid var(--line);
+      border-radius: 16px; padding: 22px 24px;
+    }
+    .stat-card strong {
+      display: block; font-size: 1.65rem; color: var(--amber); margin-bottom: 4px;
+    }
+    .stat-card span { font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+
+    .section { max-width: 1250px; margin: 0 auto 50px; padding: 0 6%; }
+    .section h2 { font-size: 1.5rem; letter-spacing: -.03em; margin: 0 0 20px; }
+
+    .pipeline {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    }
+    .pipeline-step {
+      background: white; border: 1px solid var(--line);
+      border-radius: 16px; padding: 22px 18px; text-align: center;
+    }
+    .step-num {
+      display: block; font-size: .65rem; font-weight: 850;
+      letter-spacing: .12em; color: var(--amber); margin-bottom: 10px;
+    }
+    .step-icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+    .pipeline-step h3 { font-size: .85rem; margin: 0 0 5px; }
+    .pipeline-step p { font-size: .72rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    /* IMAGE FRAME */
+    .img-frame {
+      background: var(--navy); border-radius: 20px;
+      padding: 12px; box-shadow: 0 25px 70px rgba(17,24,39,.13);
+      margin-bottom: 14px;
+    }
+    .img-real { width: 100%; display: block; border-radius: 12px; object-fit: cover; }
+    .img-caption {
+      text-align: center; color: var(--muted);
+      font-size: .78rem; font-style: italic; margin-bottom: 40px;
+    }
+
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .feature-card {
+      background: white; border: 1px solid var(--line);
+      border-radius: 16px; padding: 26px 28px;
+    }
+    .feature-card h3 { margin: 0 0 8px; font-size: 1rem; }
+    .feature-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.65; }
+
+    .add-images-note { max-width: 1250px; margin: 0 auto 30px; padding: 0 6%; }
+    .note-inner {
+      background: #fffbeb; border: 1px solid #fcd34d;
+      border-radius: 14px; padding: 18px 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .note-inner p { margin: 0; color: #92400e; font-size: .85rem; line-height: 1.6; }
+
+    footer { text-align: center; padding: 30px; color: var(--muted); font-size: .82rem; }
+
+    @media (max-width: 900px) {
+      .stats-row { grid-template-columns: repeat(2,1fr); }
+      .pipeline { grid-template-columns: repeat(2,1fr); }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="../../index.html" class="nav-brand">AI Product Portfolio</a>
+  <a href="../index.html">← All ML projects</a>
+</header>
+
+<main>
+
+  <section class="hero">
+    <a href="../index.html" class="back-link">← Back to Machine Learning</a>
+    <div class="eyebrow">NLP · TF-IDF · TEXT CLASSIFICATION</div>
+    <h1>Poem Genre<br><span>Classification.</span></h1>
+    <p>
+      A multi-class text classification model that categorizes poems by genre
+      using NLP techniques — from raw text through cleaning, TF-IDF feature
+      extraction, model training, and evaluation.
+    </p>
+  </section>
+
+  <section class="meta">
+    <span>Python</span>
+    <span>Scikit-learn</span>
+    <span>NLTK</span>
+    <span>TF-IDF</span>
+    <span>Multi-class classification</span>
+    <span>Pandas</span>
+  </section>
+
+  <section class="stats-row">
+    <div class="stat-card">
+      <strong>~93%</strong>
+      <span>Test accuracy</span>
+    </div>
+    <div class="stat-card">
+      <strong>Multi-class</strong>
+      <span>Classification task</span>
+    </div>
+    <div class="stat-card">
+      <strong>TF-IDF</strong>
+      <span>Feature extraction</span>
+    </div>
+    <div class="stat-card">
+      <strong>NLP</strong>
+      <span>Processing pipeline</span>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="section">
+    <h2>How it works</h2>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <span class="step-num">01</span>
+        <span class="step-icon">📜</span>
+        <h3>Data cleaning</h3>
+        <p>Remove punctuation, noise, and normalize text</p>
+      </div>
+      <div class="pipeline-step">
+        <span class="step-num">02</span>
+        <span class="step-icon">🔤</span>
+        <h3>NLP processing</h3>
+        <p>Tokenize, lemmatize, remove stopwords using NLTK</p>
+      </div>
+      <div class="pipeline-step">
+        <span class="step-num">03</span>
+        <span class="step-icon">🧮</span>
+        <h3>TF-IDF vectorization</h3>
+        <p>Convert text to numerical feature vectors</p>
+      </div>
+      <div class="pipeline-step">
+        <span class="step-num">04</span>
+        <span class="step-icon">📊</span>
+        <h3>Classification</h3>
+        <p>Train and evaluate multi-class classifier per genre</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE PLACEHOLDERS -->
+  <section class="add-images-note">
+    <div class="note-inner">
+      <span>📌</span>
+      <p>
+        Confusion matrix and classification report will be added here shortly.
+        Drop images into <code>assets/ml/poem-classification/</code>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="img-frame">
+      <img
+        class="img-real"
+        src="../../assets/ml/poem-classification/confusion_matrix.png"
+        alt="Confusion matrix"
+        onerror="this.parentElement.innerHTML='<div style=\'background:#1e2d3d;border-radius:12px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px\'><span style=\'font-size:2.5rem\'>📊</span><p style=\'color:#6b7a99;font-size:.85rem;text-align:center;margin:0\'>Confusion matrix<br><small>Add image to assets/ml/poem-classification/confusion_matrix.png</small></p></div>'"
+      >
+    </div>
+    <p class="img-caption">Confusion matrix — performance across genre classes</p>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="section">
+    <h2>Key features</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>NLP preprocessing pipeline</h3>
+        <p>Raw poem text is cleaned, tokenized using NLTK, lemmatized to reduce words to their base form, and filtered to remove stopwords — creating cleaner input features for the model.</p>
+      </div>
+      <div class="feature-card">
+        <h3>TF-IDF feature extraction</h3>
+        <p>Term Frequency-Inverse Document Frequency vectorization converts cleaned text into numerical features, weighting terms that are distinctive to specific poem genres rather than common across all text.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multi-class classification</h3>
+        <p>Unlike binary classification, this model must distinguish between multiple genre classes simultaneously — requiring a one-vs-rest or multinomial approach and per-class evaluation metrics.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Per-class evaluation</h3>
+        <p>Model performance is evaluated per genre using precision, recall, and F1-score — identifying which genres are most and least reliably classified and informing potential improvements.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer><p>© 2026 AI Product Portfolio</p></footer>
+
+</body>
+</html>
