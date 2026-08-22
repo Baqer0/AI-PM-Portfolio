@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AI Product Manager Portfolio | MyCCAngel</title>
+  <title>AI Product Manager Portfolio | Product · AI · Data</title>
 
   <meta
     name="description"
-    content="AI Product Manager portfolio featuring healthcare product management, data analytics, machine learning and applied AI projects."
+    content="AI Product Manager portfolio showcasing product management, AI, data analytics, machine learning, consulting, sales and cross-market experience."
   >
 
   <style>
@@ -24,19 +24,16 @@
       --blue: #3b82f6;
       --blue-dark: #245d9f;
       --blue-soft: #eaf3ff;
-
       --ink: #172033;
       --muted: #667085;
-      --line: #e3eaf2;
-
+      --line: #e5ebf3;
       --bg: #f6f9fc;
       --white: #ffffff;
-
       --green: #18864b;
       --purple: #6548a8;
       --orange: #d97706;
-
-      --max: 1180px;
+      --red: #c44536;
+      --max: 1280px;
     }
 
     html {
@@ -64,13 +61,12 @@
 
     .portfolio {
       max-width: var(--max);
-      margin: 0 auto;
+      margin: auto;
     }
 
-
-    /* =========================================================
+    /* =========================
        HEADER
-    ========================================================= */
+    ========================= */
 
     .header {
       background:
@@ -86,25 +82,18 @@
         );
 
       color: white;
-
       border-radius: 28px;
 
-      padding: 52px 55px;
+      padding: 48px 52px;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      gap: 40px;
-
-      margin-bottom: 24px;
+      margin-bottom: 22px;
 
       box-shadow:
-        0 24px 60px rgba(5,20,40,.20);
+        0 24px 60px rgba(5,20,40,.22);
     }
 
-    .header-left {
-      max-width: 720px;
+    .header-content {
+      max-width: 950px;
     }
 
     .eyebrow {
@@ -112,15 +101,15 @@
       align-items: center;
       gap: 8px;
 
-      color: #8ec2ff;
+      margin-bottom: 14px;
+
+      color: #8fc4ff;
 
       font-size: .72rem;
       font-weight: 800;
 
       text-transform: uppercase;
       letter-spacing: .12em;
-
-      margin-bottom: 14px;
     }
 
     .eyebrow-dot {
@@ -133,10 +122,8 @@
     }
 
     .header h1 {
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-
+      font-size: clamp(2.25rem, 5vw, 3.7rem);
       line-height: 1.02;
-
       letter-spacing: -.05em;
 
       margin-bottom: 18px;
@@ -146,41 +133,44 @@
       color: #79b7ff;
     }
 
-    .header-description {
-      max-width: 650px;
+    .header-intro {
+      max-width: 850px;
 
-      color: #b8c9df;
+      color: #c3d2e5;
 
       font-size: 1rem;
+      line-height: 1.75;
+    }
 
-      line-height: 1.7;
+    .header-intro strong {
+      color: white;
+      font-weight: 700;
     }
 
     .header-actions {
       display: flex;
-
-      flex-direction: column;
-
+      flex-wrap: wrap;
       gap: 10px;
 
-      min-width: 170px;
+      margin-top: 28px;
     }
 
     .header-actions a {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
 
-      padding: 11px 17px;
+      padding: 10px 16px;
 
       border-radius: 999px;
 
       background: rgba(255,255,255,.07);
 
-      border: 1px solid rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.12);
 
-      text-align: center;
+      color: #e7f1ff;
 
-      font-size: .82rem;
-
+      font-size: .8rem;
       font-weight: 700;
 
       transition: .2s ease;
@@ -194,41 +184,47 @@
       border-color: #60a5fa;
     }
 
+    /* =========================
+       STRENGTHS
+    ========================= */
 
-    /* =========================================================
-       SECTION
-    ========================================================= */
+    .strengths {
+      display: grid;
 
-    .section {
-      margin-top: 24px;
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 12px;
+
+      margin-bottom: 28px;
     }
 
-    .section-header {
-      display: flex;
+    .strength {
+      background: white;
 
-      justify-content: space-between;
+      border: 1px solid var(--line);
 
-      align-items: flex-end;
+      border-radius: 17px;
 
-      gap: 20px;
+      padding: 17px 16px;
 
-      margin-bottom: 15px;
+      box-shadow:
+        0 5px 18px rgba(20,40,70,.035);
+
+      transition: .2s ease;
     }
 
-    .section-heading {
-      display: flex;
+    .strength:hover {
+      transform: translateY(-2px);
 
-      align-items: center;
-
-      gap: 11px;
+      border-color: #bfd5ef;
     }
 
-    .section-icon {
+    .strength-icon {
       width: 38px;
       height: 38px;
 
       display: grid;
-
       place-items: center;
 
       border-radius: 11px;
@@ -237,193 +233,181 @@
 
       color: var(--blue-dark);
 
+      margin-bottom: 10px;
+
       font-size: 1rem;
     }
 
-    .section-heading h2 {
-      font-size: 1.35rem;
+    .strength h3 {
+      font-size: .85rem;
 
-      letter-spacing: -.025em;
+      margin-bottom: 3px;
     }
 
-    .section-description {
+    .strength p {
       color: var(--muted);
 
-      font-size: .82rem;
+      font-size: .7rem;
+      line-height: 1.45;
     }
 
+    /* =========================
+       SECTION
+    ========================= */
 
-    /* =========================================================
-       CATEGORY CONTAINER
-    ========================================================= */
-
-    .category {
-      background: var(--white);
-
-      border: 1px solid var(--line);
-
-      border-radius: 25px;
-
-      padding: 25px;
-
-      box-shadow:
-        0 8px 30px rgba(20,40,70,.04);
+    .section {
+      margin-top: 30px;
     }
 
-    .category-intro {
+    .section-header {
       display: flex;
 
       justify-content: space-between;
-
-      align-items: flex-start;
-
-      gap: 25px;
-
-      margin-bottom: 20px;
-    }
-
-    .category-title {
-      font-size: 1.15rem;
-
-      letter-spacing: -.02em;
-    }
-
-    .category-description {
-      color: var(--muted);
-
-      font-size: .84rem;
-
-      max-width: 700px;
-
-      margin-top: 5px;
-    }
-
-    .category-label {
-      padding: 5px 10px;
-
-      border-radius: 999px;
-
-      background: #f2f6fb;
-
-      border: 1px solid #e2eaf3;
-
-      color: #53677e;
-
-      font-size: .63rem;
-
-      font-weight: 800;
-
-      letter-spacing: .05em;
-
-      white-space: nowrap;
-    }
-
-
-    /* =========================================================
-       PRODUCT CARD
-    ========================================================= */
-
-    .product-card {
-      display: grid;
-
-      grid-template-columns: auto 1fr auto;
-
-      align-items: center;
+      align-items: flex-end;
 
       gap: 20px;
 
-      padding: 23px;
-
-      border-radius: 20px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #f9fcff,
-          #f4f8fd
-        );
-
-      border: 1px solid #dce7f2;
-
-      transition: .2s ease;
+      margin-bottom: 15px;
     }
 
-    .product-card:hover {
-      transform: translateY(-3px);
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-      border-color: #b6cfea;
+      font-size: 1.45rem;
 
-      box-shadow:
-        0 14px 30px rgba(40,100,170,.08);
+      letter-spacing: -.03em;
     }
 
-    .product-icon {
-      width: 58px;
-      height: 58px;
+    .section-title-icon {
+      width: 34px;
+      height: 34px;
 
       display: grid;
-
       place-items: center;
 
-      border-radius: 17px;
+      border-radius: 10px;
 
       background: var(--blue-soft);
 
       color: var(--blue-dark);
 
-      font-size: 1.45rem;
+      font-size: .95rem;
     }
 
-    .product-content h3 {
-      font-size: 1.15rem;
+    .section-description {
+      max-width: 680px;
+
+      color: var(--muted);
+
+      font-size: .82rem;
+    }
+
+    /* =========================
+       MAIN PRODUCT CARD
+    ========================= */
+
+    .product-card {
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 25px;
+
+      padding: 30px;
+
+      box-shadow:
+        0 8px 30px rgba(20,40,70,.045);
+
+      transition: .2s ease;
+    }
+
+    .product-card:hover {
+      border-color: #bfd5ef;
+
+      box-shadow:
+        0 15px 40px rgba(20,40,70,.07);
+    }
+
+    .product-top {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      gap: 25px;
+
+      align-items: start;
+
+      padding-bottom: 25px;
+
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .product-heading {
+      display: flex;
+      gap: 16px;
+    }
+
+    .product-icon {
+      width: 52px;
+      height: 52px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 15px;
+
+      background: var(--blue-soft);
+
+      color: var(--blue-dark);
+
+      font-size: 1.35rem;
+    }
+
+    .product-heading h3 {
+      font-size: 1.35rem;
 
       margin-bottom: 5px;
+
+      letter-spacing: -.025em;
     }
 
-    .product-content p {
+    .product-heading p {
+      max-width: 760px;
+
       color: var(--muted);
 
       font-size: .84rem;
-
-      max-width: 650px;
-    }
-
-    .product-tags {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 6px;
-
-      margin-top: 10px;
     }
 
     .tag {
-      display: inline-block;
+      display: inline-flex;
 
-      padding: 4px 8px;
+      padding: 5px 9px;
 
       border-radius: 999px;
 
-      background: white;
+      background: var(--blue-soft);
 
-      border: 1px solid #dbe6f1;
-
-      color: #45617d;
+      color: var(--blue-dark);
 
       font-size: .61rem;
+      font-weight: 800;
 
-      font-weight: 750;
+      letter-spacing: .04em;
+
+      white-space: nowrap;
     }
 
-    .primary-link {
+    .product-link {
       display: inline-flex;
-
       align-items: center;
-
       gap: 6px;
 
-      padding: 10px 14px;
+      padding: 10px 15px;
 
       border-radius: 10px;
 
@@ -431,341 +415,303 @@
 
       color: white;
 
-      font-size: .73rem;
-
+      font-size: .74rem;
       font-weight: 750;
-
-      white-space: nowrap;
 
       transition: .2s ease;
     }
 
-    .primary-link:hover {
-      background: #183454;
+    .product-link:hover {
+      background: #1b3b62;
 
       transform: translateY(-1px);
     }
 
+    /* =========================
+       DOCUMENTS
+    ========================= */
 
-    /* =========================================================
-       ANALYTICS CARDS
-    ========================================================= */
+    .documents-title {
+      margin-top: 22px;
+      margin-bottom: 11px;
+
+      color: #526173;
+
+      font-size: .72rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: .08em;
+
+      font-weight: 800;
+    }
+
+    .documents {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .document {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 9px 12px;
+
+      background: #f8fbff;
+
+      border: 1px solid #dfe9f3;
+
+      border-radius: 10px;
+
+      color: #294967;
+
+      font-size: .7rem;
+      font-weight: 700;
+
+      transition: .15s ease;
+    }
+
+    .document:hover {
+      background: #eef5fd;
+
+      border-color: #b8d0ed;
+
+      transform: translateY(-1px);
+    }
+
+    .document-icon {
+      color: var(--red);
+
+      font-size: .8rem;
+    }
+
+    /* =========================
+       DATA / SCIENCE GRID
+    ========================= */
 
     .analytics-grid {
       display: grid;
 
       grid-template-columns: repeat(2, 1fr);
 
-      gap: 15px;
+      gap: 18px;
     }
 
     .analytics-card {
-      background: #fbfdff;
+      background: white;
 
-      border: 1px solid #e0e8f1;
+      border: 1px solid var(--line);
 
-      border-radius: 20px;
+      border-radius: 23px;
 
-      padding: 22px;
+      padding: 25px;
+
+      box-shadow:
+        0 8px 30px rgba(20,40,70,.045);
 
       transition: .2s ease;
     }
 
     .analytics-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
 
-      border-color: #b9d0e9;
+      border-color: #bfd5ef;
+    }
 
-      box-shadow:
-        0 12px 28px rgba(40,100,170,.07);
+    .analytics-heading {
+      display: flex;
+      align-items: flex-start;
+
+      gap: 14px;
+
+      margin-bottom: 9px;
     }
 
     .analytics-icon {
-      width: 45px;
-      height: 45px;
+      width: 46px;
+      height: 46px;
+
+      flex-shrink: 0;
 
       display: grid;
-
       place-items: center;
 
       border-radius: 13px;
 
-      margin-bottom: 15px;
+      background: var(--blue-soft);
+
+      color: var(--blue-dark);
 
       font-size: 1.15rem;
     }
 
-    .tableau-icon {
-      background: #fff5e8;
-      color: var(--orange);
-    }
-
-    .ai-icon {
-      background: #f0ebff;
-      color: var(--purple);
-    }
-
-    .analytics-card h3 {
+    .analytics-heading h3 {
       font-size: 1.05rem;
-
-      margin-bottom: 6px;
-    }
-
-    .analytics-card p {
-      color: var(--muted);
-
-      font-size: .82rem;
-
-      margin-bottom: 15px;
-    }
-
-    .analytics-link {
-      display: inline-flex;
-
-      color: var(--blue-dark);
-
-      font-size: .76rem;
-
-      font-weight: 800;
-    }
-
-
-    /* =========================================================
-       AI MODEL CARDS
-    ========================================================= */
-
-    .model-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 10px;
-
-      margin-top: 15px;
-    }
-
-    .model-card {
-      padding: 14px;
-
-      background: white;
-
-      border: 1px solid #e0e8f1;
-
-      border-radius: 14px;
-
-      transition: .2s ease;
-    }
-
-    .model-card:hover {
-      border-color: #b9d0e9;
-
-      background: #f9fcff;
-    }
-
-    .model-number {
-      color: #91a2b6;
-
-      font-size: .62rem;
-
-      font-weight: 800;
-
-      letter-spacing: .08em;
-
-      margin-bottom: 5px;
-    }
-
-    .model-card h4 {
-      font-size: .82rem;
 
       margin-bottom: 3px;
     }
 
-    .model-card p {
+    .analytics-heading p {
       color: var(--muted);
 
-      font-size: .69rem;
-
-      line-height: 1.5;
+      font-size: .76rem;
     }
 
-    .model-link {
-      display: inline-flex;
+    /* =========================
+       SUB PROJECTS
+    ========================= */
 
-      margin-top: 9px;
+    .subprojects {
+      margin-top: 20px;
+
+      display: grid;
+
+      gap: 9px;
+    }
+
+    .subproject {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      padding: 12px 13px;
+
+      background: #f9fbfd;
+
+      border: 1px solid #e6edf4;
+
+      border-radius: 12px;
+
+      transition: .15s ease;
+    }
+
+    .subproject:hover {
+      background: #f2f7fc;
+
+      border-color: #cbdceb;
+
+      transform: translateX(2px);
+    }
+
+    .subproject-icon {
+      width: 32px;
+      height: 32px;
+
+      display: grid;
+      place-items: center;
+
+      flex-shrink: 0;
+
+      border-radius: 9px;
+
+      background: white;
+
+      border: 1px solid #dfe8f1;
 
       color: var(--blue-dark);
 
-      font-size: .67rem;
-
-      font-weight: 800;
+      font-size: .8rem;
     }
 
+    .subproject-content {
+      flex: 1;
+    }
 
-    /* =========================================================
+    .subproject h4 {
+      font-size: .78rem;
+
+      margin-bottom: 1px;
+    }
+
+    .subproject p {
+      color: var(--muted);
+
+      font-size: .67rem;
+    }
+
+    .subproject-arrow {
+      color: #7890a8;
+
+      font-size: .8rem;
+    }
+
+    /* =========================
        SKILLS
-    ========================================================= */
+    ========================= */
+
+    .skills-section {
+      margin-top: 30px;
+
+      padding: 25px 28px;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 22px;
+
+      box-shadow:
+        0 8px 30px rgba(20,40,70,.035);
+    }
 
     .skills-grid {
       display: grid;
 
       grid-template-columns: repeat(2, 1fr);
 
-      gap: 15px;
+      gap: 25px;
+
+      margin-top: 17px;
     }
 
-    .skills-card {
-      background: white;
+    .skill-group h3 {
+      font-size: .82rem;
 
-      border: 1px solid var(--line);
-
-      border-radius: 20px;
-
-      padding: 22px;
+      margin-bottom: 9px;
     }
 
-    .skills-card-header {
-      display: flex;
-
-      align-items: center;
-
-      gap: 11px;
-
-      margin-bottom: 17px;
-    }
-
-    .skills-card-icon {
-      width: 42px;
-      height: 42px;
-
-      display: grid;
-
-      place-items: center;
-
-      border-radius: 12px;
-
-      background: var(--blue-soft);
-
-      color: var(--blue-dark);
-
-      font-size: 1rem;
-    }
-
-    .skills-card h3 {
-      font-size: .98rem;
-    }
-
-    .skills-card small {
-      display: block;
-
-      color: var(--muted);
-
-      font-size: .68rem;
-
-      margin-top: 1px;
-    }
-
-    .skills-list {
+    .skill-list {
       display: flex;
 
       flex-wrap: wrap;
 
-      gap: 8px;
+      gap: 7px;
     }
 
     .skill {
       display: inline-flex;
-
       align-items: center;
-
       gap: 6px;
 
       padding: 7px 10px;
 
-      border-radius: 10px;
+      border-radius: 9px;
 
       background: #f7faff;
 
-      border: 1px solid #e1e9f2;
+      border: 1px solid #e2eaf3;
 
-      color: #3d526a;
+      color: #42566d;
 
-      font-size: .69rem;
-
+      font-size: .68rem;
       font-weight: 650;
     }
 
     .skill-icon {
       color: var(--blue);
-
-      font-size: .78rem;
     }
 
-
-    /* =========================================================
-       DOCUMENTS
-    ========================================================= */
-
-    .documents {
-      background: white;
-
-      border: 1px solid var(--line);
-
-      border-radius: 20px;
-
-      padding: 22px;
-    }
-
-    .doc-list {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-      margin-top: 13px;
-    }
-
-    .doc {
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 8px;
-
-      padding: 9px 13px;
-
-      background: #f8fbff;
-
-      border: 1px solid #dfe9f3;
-
-      border-radius: 999px;
-
-      color: #294967;
-
-      font-size: .72rem;
-
-      font-weight: 650;
-
-      transition: .15s;
-    }
-
-    .doc:hover {
-      background: #eef5fd;
-
-      border-color: #b8d0ed;
-    }
-
-    .doc-icon {
-      color: #c44536;
-    }
-
-
-    /* =========================================================
+    /* =========================
        FOOTER
-    ========================================================= */
+    ========================= */
 
     footer {
-      padding: 30px 0 8px;
+      padding: 30px 0 5px;
 
       text-align: center;
 
@@ -774,102 +720,86 @@
       font-size: .72rem;
     }
 
-
-    /* =========================================================
+    /* =========================
        RESPONSIVE
-    ========================================================= */
+    ========================= */
 
-    @media(max-width: 850px) {
+    @media(max-width: 1050px) {
 
-      body {
-        padding: 16px;
-      }
-
-      .header {
-        padding: 38px 30px;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-      }
-
-      .header-actions {
-        width: 100%;
-
-        flex-direction: row;
-
-        flex-wrap: wrap;
-      }
-
-      .header-actions a {
-        flex: 1;
-      }
-
-      .product-card {
-        grid-template-columns: auto 1fr;
-      }
-
-      .product-card .primary-link {
-        grid-column: 2;
-        justify-self: start;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media(max-width: 650px) {
-
-      .header h1 {
-        font-size: 2.25rem;
-      }
-
-      .category {
-        padding: 18px;
+      .strengths {
+        grid-template-columns:
+          repeat(3, 1fr);
       }
 
       .analytics-grid {
         grid-template-columns: 1fr;
       }
 
-      .model-grid {
+    }
+
+    @media(max-width: 800px) {
+
+      body {
+        padding: 14px;
+      }
+
+      .header {
+        padding: 35px 28px;
+      }
+
+      .strengths {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .product-top {
         grid-template-columns: 1fr;
       }
 
-      .product-card {
+      .skills-grid {
         grid-template-columns: 1fr;
       }
 
-      .product-card .primary-link {
-        grid-column: auto;
+    }
+
+    @media(max-width: 560px) {
+
+      .strengths {
+        grid-template-columns: 1fr;
       }
 
-      .product-icon {
-        width: 50px;
-        height: 50px;
+      .header h1 {
+        font-size: 2.2rem;
       }
 
-      .category-intro {
+      .product-card,
+      .analytics-card {
+        padding: 21px;
+      }
+
+      .documents {
         flex-direction: column;
       }
+
+      .document {
+        width: 100%;
+      }
+
     }
   </style>
 </head>
-
 
 <body>
 
 <div class="portfolio">
 
-
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
+  <!-- =========================================
+       HERO
+  ========================================== -->
 
   <header class="header">
 
-    <div class="header-left">
+    <div class="header-content">
 
       <div class="eyebrow">
         <span class="eyebrow-dot"></span>
@@ -878,127 +808,188 @@
 
       <h1>
         AI Product Manager
-        <span>Portfolio</span>
+        <span>& Data Professional</span>
       </h1>
 
-      <p class="header-description">
-        Product strategy, healthcare innovation, data analytics and
-        applied AI — bringing together product thinking, technical
-        collaboration and analytical problem solving.
+      <p class="header-intro">
+        I work at the intersection of
+        <strong>product management, AI, data and business</strong> —
+        combining technical understanding with customer, commercial
+        and strategic thinking. My experience spans
+        <strong>product development, data & AI, sales, consulting
+        and different markets</strong>, allowing me to connect
+        technology with real business and user needs.
+      </p>
+
+      <div class="header-actions">
+
+        <a href="#product">
+          ✦ Product Management
+        </a>
+
+        <a href="#data-science">
+          ◈ Data & AI
+        </a>
+
+        <a href="#skills">
+          ◆ Skills
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       CORE STRENGTHS
+  ========================================== -->
+
+  <section class="strengths">
+
+    <div class="strength">
+
+      <div class="strength-icon">
+        ✦
+      </div>
+
+      <h3>Product Management</h3>
+
+      <p>
+        Product strategy, discovery, roadmap,
+        requirements and responsible AI.
       </p>
 
     </div>
 
 
-    <nav class="header-actions">
+    <div class="strength">
 
-      <a href="#product-management">
-        Product Management
-      </a>
+      <div class="strength-icon">
+        ◈
+      </div>
 
-      <a href="#data-science">
-        Data & AI
-      </a>
+      <h3>AI & Data</h3>
 
-      <a href="#skills">
-        Skills
-      </a>
+      <p>
+        Machine learning, analytics,
+        experimentation and data-driven decisions.
+      </p>
 
-    </nav>
-
-  </header>
+    </div>
 
 
+    <div class="strength">
 
-  <!-- =======================================================
+      <div class="strength-icon">
+        ◎
+      </div>
+
+      <h3>Business & Sales</h3>
+
+      <p>
+        Commercial thinking, customer needs,
+        value propositions and go-to-market.
+      </p>
+
+    </div>
+
+
+    <div class="strength">
+
+      <div class="strength-icon">
+        ◇
+      </div>
+
+      <h3>Consulting</h3>
+
+      <p>
+        Structured problem solving, stakeholder
+        management and strategic recommendations.
+      </p>
+
+    </div>
+
+
+    <div class="strength">
+
+      <div class="strength-icon">
+        ◫
+      </div>
+
+      <h3>Cross-Market</h3>
+
+      <p>
+        Experience connecting technology,
+        customers and business across markets.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
        PRODUCT MANAGEMENT
-  ======================================================== -->
+  ========================================== -->
 
   <section
     class="section"
-    id="product-management"
+    id="product"
   >
 
     <div class="section-header">
 
-      <div class="section-heading">
+      <div>
 
-        <div class="section-icon">
-          ✦
-        </div>
+        <h2 class="section-title">
 
-        <h2>
+          <span class="section-title-icon">
+            ✦
+          </span>
+
           Product Management
+
         </h2>
 
-      </div>
+        <p class="section-description">
+          A product case study demonstrating how I approach
+          AI product strategy, healthcare, trust, personalization,
+          responsible AI and patient experience.
+        </p>
 
-      <div class="section-description">
-        AI product strategy · Healthcare
       </div>
 
     </div>
 
 
-    <div class="category">
+    <article class="product-card">
 
-      <div class="category-intro">
+      <div class="product-top">
 
-        <div>
+        <div class="product-heading">
 
-          <h3 class="category-title">
-            AI Healthcare Product
-          </h3>
+          <div class="product-icon">
+            ✦
+          </div>
 
-          <p class="category-description">
-            Product thinking applied to healthcare, trust,
-            personalization, patient experience and responsible AI.
-          </p>
+          <div>
 
-        </div>
+            <h3>
+              MyCCAngel
+            </h3>
 
-        <span class="category-label">
-          FEATURED PRODUCT
-        </span>
-
-      </div>
-
-
-      <article class="product-card">
-
-        <div class="product-icon">
-          ✦
-        </div>
-
-
-        <div class="product-content">
-
-          <h3>
-            MyCCAngel
-          </h3>
-
-          <p>
-            An AI-powered healthcare product concept focused on
-            helping patients navigate care through trust,
-            personalization and responsible AI.
-          </p>
-
-          <div class="product-tags">
+            <p>
+              AI-powered healthcare product focused on
+              trust, personalization, patient experience
+              and responsible AI. The project brings together
+              product strategy, user needs, AI capabilities,
+              healthcare considerations and business thinking.
+            </p>
 
             <span class="tag">
-              AI PRODUCT
-            </span>
-
-            <span class="tag">
-              HEALTHCARE
-            </span>
-
-            <span class="tag">
-              PRODUCT STRATEGY
-            </span>
-
-            <span class="tag">
-              RESPONSIBLE AI
+              AI PRODUCT · HEALTHCARE
             </span>
 
           </div>
@@ -1007,23 +998,87 @@
 
 
         <a
-          class="primary-link"
+          class="product-link"
           href="myccangel/index.html"
         >
           View Case Study →
         </a>
 
-      </article>
+      </div>
 
-    </div>
+
+      <!-- DOCUMENTS INSIDE PRODUCT CARD -->
+
+      <div class="documents-title">
+        Supporting product documentation
+      </div>
+
+      <div class="documents">
+
+        <a
+          class="document"
+          href="docs/MyCCAngel_CaseStudy_Deck.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="document-icon">▣</span>
+          Case Study Deck
+        </a>
+
+
+        <a
+          class="document"
+          href="docs/MyCCAngel_CaseStudy_Full.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="document-icon">▣</span>
+          Full Case Study
+        </a>
+
+
+        <a
+          class="document"
+          href="docs/MyCCAngel_CaseStudy_OnePager.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="document-icon">▣</span>
+          One-Pager
+        </a>
+
+
+        <a
+          class="document"
+          href="docs/MyCCAngel_PRD.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="document-icon">▣</span>
+          PRD
+        </a>
+
+
+        <a
+          class="document"
+          href="docs/MyCCAngel_Roadmap.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="document-icon">▣</span>
+          Roadmap
+        </a>
+
+      </div>
+
+    </article>
 
   </section>
 
 
-
-  <!-- =======================================================
+  <!-- =========================================
        DATA ANALYTICS & SCIENCE
-  ======================================================== -->
+  ========================================== -->
 
   <section
     class="section"
@@ -1032,280 +1087,318 @@
 
     <div class="section-header">
 
-      <div class="section-heading">
+      <div>
 
-        <div class="section-icon">
-          ◈
-        </div>
+        <h2 class="section-title">
 
-        <h2>
+          <span class="section-title-icon">
+            ◈
+          </span>
+
           Data Analytics & Science
+
         </h2>
 
-      </div>
+        <p class="section-description">
+          Practical work across business intelligence,
+          healthcare analytics, data visualization and
+          applied machine-learning models.
+        </p>
 
-      <div class="section-description">
-        Analytics · BI · Machine Learning · AI
       </div>
 
     </div>
 
 
-    <div class="category">
-
-      <div class="category-intro">
-
-        <div>
-
-          <h3 class="category-title">
-            Applied Data & AI Work
-          </h3>
-
-          <p class="category-description">
-            Analytical projects and machine-learning models
-            demonstrating data exploration, visualization,
-            classification and applied AI.
-          </p>
-
-        </div>
-
-        <span class="category-label">
-          ANALYTICS & AI
-        </span>
-
-      </div>
+    <div class="analytics-grid">
 
 
-      <div class="analytics-grid">
+      <!-- =====================================
+           TABLEAU
+      ====================================== -->
 
+      <article class="analytics-card">
 
-        <!-- TABLEAU -->
+        <div class="analytics-heading">
 
-        <article class="analytics-card">
-
-          <div class="analytics-icon tableau-icon">
+          <div class="analytics-icon">
             ▥
           </div>
 
-          <h3>
-            Tableau Analytics
-          </h3>
+          <div>
 
-          <p>
-            Interactive dashboards and analytical projects
-            exploring healthcare indicators, creator data,
-            trends and visual storytelling.
-          </p>
+            <h3>
+              Tableau Analytics
+            </h3>
+
+            <p>
+              Interactive dashboards and analytical
+              storytelling across healthcare and
+              creator-economy data.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="subprojects">
+
+
+          <!-- YOUTUBE -->
 
           <a
-            class="analytics-link"
-            href="analytics/index.html"
+            class="subproject"
+            href="analytics/youtube/index.html"
           >
-            Explore Tableau Projects →
+
+            <div class="subproject-icon">
+              ▶
+            </div>
+
+            <div class="subproject-content">
+
+              <h4>
+                YouTube Analytics
+              </h4>
+
+              <p>
+                Creator performance, subscribers,
+                geography and entertainment-channel trends.
+              </p>
+
+            </div>
+
+            <span class="subproject-arrow">
+              →
+            </span>
+
           </a>
 
-        </article>
+
+          <!-- DIABETES -->
+
+          <a
+            class="subproject"
+            href="analytics/diabetes/index.html"
+          >
+
+            <div class="subproject-icon">
+              +
+            </div>
+
+            <div class="subproject-content">
+
+              <h4>
+                Diabetes Health Analysis
+              </h4>
+
+              <p>
+                Healthcare indicators across lifestyle,
+                health and demographic variables.
+              </p>
+
+            </div>
+
+            <span class="subproject-arrow">
+              →
+            </span>
+
+          </a>
+
+        </div>
+
+      </article>
 
 
+      <!-- =====================================
+           AI MODELS
+      ====================================== -->
 
-        <!-- AI MODELS -->
+      <article class="analytics-card">
 
-        <article class="analytics-card">
+        <div class="analytics-heading">
 
-          <div class="analytics-icon ai-icon">
+          <div class="analytics-icon">
             ◉
           </div>
 
-          <h3>
-            AI Models
-          </h3>
+          <div>
 
-          <p>
-            Applied machine-learning projects covering NLP,
-            computer vision and healthcare-oriented text
-            classification.
-          </p>
+            <h3>
+              AI Models
+            </h3>
+
+            <p>
+              Applied machine-learning projects covering
+              NLP, computer vision and healthcare classification.
+            </p>
+
+          </div>
+
+        </div>
 
 
-          <div class="model-grid">
+        <div class="subprojects">
 
 
-            <!-- IBD -->
+          <!-- IBD -->
 
-            <div class="model-card">
+          <a
+            class="subproject"
+            href="machine-learning/IBD-Report-classifier/ml_ibd_index.html"
+          >
 
-              <div class="model-number">
-                MODEL 01
-              </div>
+            <div class="subproject-icon">
+              🧬
+            </div>
+
+            <div class="subproject-content">
 
               <h4>
                 IBD Report Classifier
               </h4>
 
               <p>
-                Machine-learning classification applied to
-                IBD-related reports.
+                Machine-learning classification applied
+                to inflammatory bowel disease reports.
               </p>
-
-              <a
-                class="model-link"
-                href="machine-learning/IBD-Report-classifier/ml_ibd_index.html"
-              >
-                View Model →
-              </a>
 
             </div>
 
+            <span class="subproject-arrow">
+              →
+            </span>
 
-            <!-- IMAGE -->
+          </a>
 
-            <div class="model-card">
 
-              <div class="model-number">
-                MODEL 02
-              </div>
+          <!-- IMAGE -->
+
+          <a
+            class="subproject"
+            href="machine-learning/image/ml_image_index.html"
+          >
+
+            <div class="subproject-icon">
+              ◈
+            </div>
+
+            <div class="subproject-content">
 
               <h4>
                 Image Classification
               </h4>
 
               <p>
-                CNN transfer-learning model using MobileNet
-                for chocolate image classification.
+                MobileNet transfer learning model
+                for white and dark chocolate classification.
               </p>
-
-              <a
-                class="model-link"
-                href="machine-learning/image/ml_image_index.html"
-              >
-                View Model →
-              </a>
 
             </div>
 
+            <span class="subproject-arrow">
+              →
+            </span>
 
-            <!-- POEM -->
+          </a>
 
-            <div class="model-card">
 
-              <div class="model-number">
-                MODEL 03
-              </div>
+          <!-- POEM -->
+
+          <a
+            class="subproject"
+            href="machine-learning/poem/ml_poem_index.html"
+          >
+
+            <div class="subproject-icon">
+              ✎
+            </div>
+
+            <div class="subproject-content">
 
               <h4>
-                Poem Classification
+                Poem Genre Classification
               </h4>
 
               <p>
-                NLP classification pipeline using TF-IDF
-                and text-processing techniques.
+                NLP pipeline using NLTK and TF-IDF
+                for multi-class poem classification.
               </p>
-
-              <a
-                class="model-link"
-                href="machine-learning/poem/ml_poem_index.html"
-              >
-                View Model →
-              </a>
 
             </div>
 
+            <span class="subproject-arrow">
+              →
+            </span>
 
-          </div>
+          </a>
 
-        </article>
+        </div>
 
-      </div>
+      </article>
 
     </div>
 
   </section>
 
 
-
-  <!-- =======================================================
+  <!-- =========================================
        SKILLS
-  ======================================================== -->
+  ========================================== -->
 
   <section
-    class="section"
+    class="skills-section"
     id="skills"
   >
 
-    <div class="section-header">
+    <h2 class="section-title">
 
-      <div class="section-heading">
+      <span class="section-title-icon">
+        ◆
+      </span>
 
-        <div class="section-icon">
-          ✧
-        </div>
+      Core Skills
 
-        <h2>
-          Skills
-        </h2>
-
-      </div>
-
-      <div class="section-description">
-        Product leadership + technical fluency
-      </div>
-
-    </div>
+    </h2>
 
 
     <div class="skills-grid">
 
 
-      <!-- PRODUCT MANAGEMENT SKILLS -->
+      <!-- PRODUCT / BUSINESS -->
 
-      <div class="skills-card">
+      <div class="skill-group">
 
-        <div class="skills-card-header">
+        <h3>
+          Product, Business & Consulting
+        </h3>
 
-          <div class="skills-card-icon">
-            ◆
-          </div>
-
-          <div>
-
-            <h3>
-              Product Management
-            </h3>
-
-            <small>
-              Strategy · Discovery · Delivery
-            </small>
-
-          </div>
-
-        </div>
-
-
-        <div class="skills-list">
+        <div class="skill-list">
 
           <span class="skill">
-            <span class="skill-icon">◆</span>
+            <span class="skill-icon">✦</span>
             Product Strategy
           </span>
 
           <span class="skill">
-            <span class="skill-icon">◇</span>
+            <span class="skill-icon">◎</span>
             Product Discovery
           </span>
 
           <span class="skill">
-            <span class="skill-icon">◎</span>
-            User Research
-          </span>
-
-          <span class="skill">
-            <span class="skill-icon">◈</span>
+            <span class="skill-icon">◇</span>
             Roadmapping
           </span>
 
           <span class="skill">
-            <span class="skill-icon">▣</span>
-            PRDs
+            <span class="skill-icon">◈</span>
+            Requirements
+          </span>
+
+          <span class="skill">
+            <span class="skill-icon">◆</span>
+            Stakeholder Management
           </span>
 
           <span class="skill">
@@ -1314,18 +1407,13 @@
           </span>
 
           <span class="skill">
-            <span class="skill-icon">⚙</span>
-            Agile Delivery
+            <span class="skill-icon">◎</span>
+            Sales
           </span>
 
           <span class="skill">
-            <span class="skill-icon">◉</span>
-            Responsible AI
-          </span>
-
-          <span class="skill">
-            <span class="skill-icon">♢</span>
-            Stakeholder Management
+            <span class="skill-icon">◇</span>
+            Consulting
           </span>
 
         </div>
@@ -1333,33 +1421,30 @@
       </div>
 
 
+      <!-- AI / DATA -->
 
-      <!-- AI / DATA SKILLS -->
+      <div class="skill-group">
 
-      <div class="skills-card">
+        <h3>
+          AI, Data & Technology
+        </h3>
 
-        <div class="skills-card-header">
+        <div class="skill-list">
 
-          <div class="skills-card-icon">
-            ◉
-          </div>
+          <span class="skill">
+            <span class="skill-icon">◉</span>
+            AI / ML
+          </span>
 
-          <div>
+          <span class="skill">
+            <span class="skill-icon">▥</span>
+            Data Analytics
+          </span>
 
-            <h3>
-              AI & Data
-            </h3>
-
-            <small>
-              Analytics · ML · Applied AI
-            </small>
-
-          </div>
-
-        </div>
-
-
-        <div class="skills-list">
+          <span class="skill">
+            <span class="skill-icon">◈</span>
+            Tableau
+          </span>
 
           <span class="skill">
             <span class="skill-icon">⌘</span>
@@ -1367,166 +1452,41 @@
           </span>
 
           <span class="skill">
-            <span class="skill-icon">▥</span>
-            Tableau
-          </span>
-
-          <span class="skill">
-            <span class="skill-icon">◫</span>
-            Data Analytics
-          </span>
-
-          <span class="skill">
-            <span class="skill-icon">◉</span>
-            Machine Learning
+            <span class="skill-icon">▣</span>
+            TensorFlow
           </span>
 
           <span class="skill">
             <span class="skill-icon">◆</span>
-            NLP
-          </span>
-
-          <span class="skill">
-            <span class="skill-icon">▣</span>
-            Computer Vision
-          </span>
-
-          <span class="skill">
-            <span class="skill-icon">◇</span>
-            TensorFlow / Keras
-          </span>
-
-          <span class="skill">
-            <span class="skill-icon">△</span>
             Scikit-learn
           </span>
 
           <span class="skill">
-            <span class="skill-icon">↗</span>
-            Data Visualization
+            <span class="skill-icon">✎</span>
+            NLP
           </span>
 
           <span class="skill">
-            <span class="skill-icon">◎</span>
-            Model Evaluation
+            <span class="skill-icon">◈</span>
+            Computer Vision
           </span>
 
         </div>
 
       </div>
 
-
     </div>
 
   </section>
 
 
-
-  <!-- =======================================================
-       SUPPORTING DOCUMENTS
-  ======================================================== -->
-
-  <section class="section">
-
-    <div class="section-header">
-
-      <div class="section-heading">
-
-        <div class="section-icon">
-          ▣
-        </div>
-
-        <h2>
-          MyCCAngel Documentation
-        </h2>
-
-      </div>
-
-    </div>
-
-
-    <div class="documents">
-
-      <p class="category-description">
-        Supporting product strategy, research and planning
-        documentation for the MyCCAngel case study.
-      </p>
-
-
-      <div class="doc-list">
-
-
-        <a
-          class="doc"
-          href="docs/MyCCAngel_CaseStudy_Deck.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="doc-icon">▣</span>
-          Case Study Deck
-        </a>
-
-
-        <a
-          class="doc"
-          href="docs/MyCCAngel_CaseStudy_Full.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="doc-icon">▣</span>
-          Full Case Study
-        </a>
-
-
-        <a
-          class="doc"
-          href="docs/MyCCAngel_CaseStudy_OnePager.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="doc-icon">▣</span>
-          One-Pager
-        </a>
-
-
-        <a
-          class="doc"
-          href="docs/MyCCAngel_PRD.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="doc-icon">▣</span>
-          PRD
-        </a>
-
-
-        <a
-          class="doc"
-          href="docs/MyCCAngel_Roadmap.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="doc-icon">▣</span>
-          Roadmap
-        </a>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =======================================================
+  <!-- =========================================
        FOOTER
-  ======================================================== -->
+  ========================================== -->
 
   <footer>
-    AI Product Manager Portfolio · Product · Healthcare · Data · AI
+    AI Product Manager Portfolio · Product · AI · Data · Healthcare · Consulting
   </footer>
-
 
 </div>
 
